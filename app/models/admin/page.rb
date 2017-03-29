@@ -1,3 +1,4 @@
-class Admin::Page
+class Admin::Page < ApplicationRecord
+
 
 end

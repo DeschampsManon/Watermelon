@@ -1,1 +1,41 @@
-wesh
+<header id="page-header">
+  <div class="container">
+    <div class="pull-left">
+      <h1><%= t '.page_title' %></h1>
+      <p class="subtitle">
+        <%= t '.page_description' %>
+      </p>
+    </div>
+    <%= link_to "create new page", new_admin_page_url , class: "pull-right btn btn-primary" %>
+  </div>
+</header>
+
+<section class="clearfix">
+  <div class="container">
+    <div class="white-content">
+      <table class="main-table datatable">
+        <thead>
+          <th><%= t '.page' %></th>
+          <th><%= t '.page_url' %></th>
+          <th><%= t '.actions' %></th>
+        </thead>
+        <tbody>
+          <% @pages.each do |page| %>
+            <tr>
+              image
+            </tr>
+            <tr>
+              <td>page.name (index)</td>
+            </tr>
+            <tr>
+              page.url
+            </tr>
+            <tr>
+              edit /delete
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

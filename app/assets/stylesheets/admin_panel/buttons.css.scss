@@ -1,0 +1,14 @@
+@import "variables";
+
+.btn{
+  font-weight: 300;
+}
+
+.btn-primary{
+  background-color: $aqua;
+  border:.1rem solid #339186;
+  &:hover{
+    background-color: #33B0A2;
+    border-color: #339186;
+  }
+}

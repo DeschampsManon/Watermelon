@@ -15,6 +15,7 @@ gem "twitter-bootstrap-rails"
 #JS
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
+gem 'jquery-datatables-rails', '~> 3.4.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'turbolinks', '~> 5'
@@ -27,11 +28,15 @@ gem 'material_icons'
 gem 'puma', '~> 3.0'
 
 #AUTHENTICATION
+gem 'cancancan'
 gem 'devise'
+gem 'rolify'
 
 #DATABASE
 gem 'pg', '~> 0.18'
 gem 'sqlite3'
+
+# GLOBALISATION & I18n
 
 group :development, :test do
   gem 'byebug', platform: :mri

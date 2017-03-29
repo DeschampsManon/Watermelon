@@ -15,13 +15,41 @@ ol{
   margin: 0;
 }
 
-h2{
+h1,
+h2,
+p{
   margin: 0;
+}
+
+input,
+select,
+textarea,
+a{
+  &:active,
+  &:focus{
+    outline: none;
+  }
 }
 
 .container{
   max-width:128rem;
   width:100%;
+}
+
+.white-content{
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  border-radius: .4rem;
+  padding: 2.5rem 2em;
+  //h2{
+  //  font-weight: 400;
+  //  font-size: 1.5rem;
+  //  border-bottom: .1rem solid #F7F7F7;
+  //  padding-bottom: 1.5rem;
+  //  margin-bottom: 2rem;
+  //}
 }
 
 .page{
