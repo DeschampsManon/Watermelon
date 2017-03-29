@@ -1,0 +1,29 @@
+@import "variables";
+
+html {
+  font-size: 62.5%;
+}
+
+body{
+  background-color: #F4F5F7;
+}
+
+ul,
+ol{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+h2{
+  margin: 0;
+}
+
+.container{
+  max-width:128rem;
+  width:100%;
+}
+
+.page{
+  float:right;
+}

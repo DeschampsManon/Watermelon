@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>e</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'admin_panel', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'admin_panel', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <%= render 'admin/layouts/main_header' %>
+  <%= render 'admin/layouts/second_header' %>
+  <div class=""page>
+    <%= yield %>
+  </div>
+</body>
+</html>

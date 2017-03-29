@@ -1,0 +1,39 @@
+<header id="main-header">
+  <div id="company-data" class="clearfix">
+    <div class="pull-left">
+      a
+    </div>
+    <i class="material-icons pull-right" id="min-nav-btn">
+      format_indent_decrease
+    </i>
+    <i class="material-icons" id="burger-menu-close">
+      close
+    </i>
+  </div>
+  <nav id="main-nav">
+    <ul>
+      <div>
+        <li>
+          <h2><%= t '.overview' %></h2>
+        </li>
+        <li>
+          <%= link_to admin_url do %>
+            <%= material_icon.home %>
+            <p><%= t '.overview' %></p>
+          <% end %>
+        </li>
+      </div>
+      <div>
+        <li>
+          <h2><%= t '.page_builder' %></h2>
+        </li>
+        <li>
+          <%= link_to admin_pages_url do %>
+              <%= material_icon.home %>
+              <p><%= t '.pages_index' %></p>
+          <% end %>
+        </li>
+      </div>
+    </ul>
+  </nav>
+</header>

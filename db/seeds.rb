@@ -1,0 +1,1 @@
+Admin.create email: 'test@example.com', password: 'p@ssword'
