@@ -2,13 +2,27 @@
 
 .btn{
   font-weight: 300;
+  border-radius: .2rem;
 }
 
 .btn-primary{
   background-color: $aqua;
   border:.1rem solid #339186;
-  &:hover{
+  &:hover,
+  &:active,
+  &:focus{
     background-color: #33B0A2;
     border-color: #339186;
+  }
+}
+
+.btn-danger{
+  background-color: $darkpurple;
+  border:.1rem solid #000026;
+  &:hover,
+  &:active,
+  &:focus{
+    background-color: #33335C;
+    border-color: #33335C;
   }
 }

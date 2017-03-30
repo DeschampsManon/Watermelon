@@ -43,6 +43,15 @@
       &.dataTables_empty{
         font-style: italic;
       }
+      .btn{
+        padding: .4rem .8rem;
+        i{
+          font-size: 1.6rem;
+          height: inherit;
+          width: inherit;
+          line-height: inherit;
+        }
+      }
     }
   }
   &.datatable{
@@ -79,7 +88,7 @@
           display: none;
         }
         &:after{
-          color: $aqua;
+          color: $pink;
         }
       }
       &.no-sorting{

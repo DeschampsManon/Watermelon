@@ -1,0 +1,28 @@
+@import "variables";
+
+#browser-preview{
+  .page-title{
+    color: #1a0dab;
+    font-size: 1.8rem;
+  }
+  .page-url{
+    span{
+      display: block;
+      float: left;
+      color: #006621;
+      font-size: 1.4rem;
+    }
+  }
+  .page-description{
+    color: #545454;
+    font-size: 1.2rem;
+    clear: both;
+  }
+}
+
+.chars-count{
+  font-size: 1.1rem;
+  &.error{
+    color: $pink;
+  }
+}

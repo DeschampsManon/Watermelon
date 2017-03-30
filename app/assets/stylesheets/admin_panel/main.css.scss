@@ -24,11 +24,16 @@ p{
 input,
 select,
 textarea,
-a{
+button,
+a {
   &:active,
   &:focus{
-    outline: none;
+    outline: none!important;
   }
+}
+
+textarea{
+  resize: none;
 }
 
 .container{
@@ -43,13 +48,6 @@ a{
   -moz-box-shadow: 0 1px 1px rgba(0,0,0,.05);
   border-radius: .4rem;
   padding: 2.5rem 2em;
-  //h2{
-  //  font-weight: 400;
-  //  font-size: 1.5rem;
-  //  border-bottom: .1rem solid #F7F7F7;
-  //  padding-bottom: 1.5rem;
-  //  margin-bottom: 2rem;
-  //}
 }
 
 .page{

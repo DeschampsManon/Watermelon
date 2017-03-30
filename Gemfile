@@ -9,8 +9,9 @@ end
 gem 'rails', '~> 5.0.1'
 
 #CSS
-gem "sass-rails"
-gem "twitter-bootstrap-rails"
+gem 'data-confirm-modal'
+gem 'sass-rails'
+gem 'twitter-bootstrap-rails'
 
 #JS
 gem 'coffee-rails', '~> 4.2'

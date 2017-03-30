@@ -1,0 +1,40 @@
+@import "variables";
+
+.main-form{
+  h2{
+    font-weight: 400;
+    font-size: 1.5rem;
+    border-bottom: .1rem solid #F7F7F7;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  input[type="text"],
+  textarea {
+    width: 100%!important;
+    padding: .6rem 1.2rem;
+    border: .1rem solid #dfe8f1;
+    box-shadow: inset 1px 1px 3px #f6f6f6;
+    -webkit-box-shadow: inset 1px 1px 3px #f6f6f6;
+    -moz-box-shadow: inset 1px 1px 3px #f6f6f6;
+    border-radius: .4rem;
+    margin-bottom: 1.5rem;
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+    }
+  }
+  input[type="submit"]{
+    font-size: 1.3rem;
+  }
+  label{
+    font-size: 1.2rem;
+    font-weight: 700;
+    &.required{
+      &:after{
+        content:"*";
+        margin-left: .5rem;
+        font-size: 1rem;
+        color: $pink;
+      }
+    }
+  }
+}
