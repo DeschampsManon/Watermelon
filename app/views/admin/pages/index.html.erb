@@ -10,13 +10,27 @@
   </div>
 </header>
 
-<section class="clearfix">
+<% if flash[:alert] %>
+    <div class="container">
+      <p class="alert alert-error">
+        <%= flash[:alert] %>
+      </p>
+    </div>
+<% end %>
+<% if flash[:notice] %>
+    <div class="container">
+      <p class="alert alert-success">
+        <%= flash[:notice] %>
+      </p>
+    </div>
+<% end %>
+
+<section class="clearfix margin-bot-20">
   <div class="container">
     <div class="white-content">
       <table class="main-table datatable">
         <thead>
           <th><%= t '.page' %></th>
-          <th></th>
           <th><%= t '.page_url' %></th>
           <th class="no-sorting"><%= t '.actions' %></th>
         </thead>
@@ -24,12 +38,70 @@
           <% @pages.each do |page| %>
             <tr>
               <td>
-                e
-              </td>
-              <td>
+                image
                 <%= page.name %>
                 <% if page.is_index %>
                   <span>(Index)</span>
+                <% end %>
+              </td>
+              <td>page.url</td>
+              <td>
+                <!-- EDIT -->
+                <%= link_to edit_admin_page_path(page), :class => 'btn btn-primary' do %>
+                    <%= material_icon.mode_edit %>
+                <% end %>
+                <!-- DELETE -->
+                <%= link_to admin_page_path(page), method: :delete, data: { confirm: t('are_you_sure') }, :class => 'btn btn-danger' do %>
+                    <%= material_icon.delete %>
+                <% end %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                image
+                <%= page.name %>
+                <% if page.is_index %>
+                    <span>(Index)</span>
+                <% end %>
+              </td>
+              <td>page.url</td>
+              <td>
+                <!-- EDIT -->
+                <%= link_to edit_admin_page_path(page), :class => 'btn btn-primary' do %>
+                    <%= material_icon.mode_edit %>
+                <% end %>
+                <!-- DELETE -->
+                <%= link_to admin_page_path(page), method: :delete, data: { confirm: t('are_you_sure') }, :class => 'btn btn-danger' do %>
+                    <%= material_icon.delete %>
+                <% end %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                image
+                <%= page.name %>
+                <% if page.is_index %>
+                    <span>(Index)</span>
+                <% end %>
+              </td>
+              <td>page.url</td>
+              <td>
+                <!-- EDIT -->
+                <%= link_to edit_admin_page_path(page), :class => 'btn btn-primary' do %>
+                    <%= material_icon.mode_edit %>
+                <% end %>
+                <!-- DELETE -->
+                <%= link_to admin_page_path(page), method: :delete, data: { confirm: t('are_you_sure') }, :class => 'btn btn-danger' do %>
+                    <%= material_icon.delete %>
+                <% end %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                image
+                <%= page.name %>
+                <% if page.is_index %>
+                    <span>(Index)</span>
                 <% end %>
               </td>
               <td>page.url</td>

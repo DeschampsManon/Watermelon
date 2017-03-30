@@ -1,6 +1,19 @@
 <div class="white-content">
   <%= form_for @page, html: { class: "clearfix main-form" }  do |f| %>
       <h2><%= t '.form_description' %></h2>
+      <!-- ERRORS -->
+      <% if @page.errors.any? %>
+          <div id="form-errors">
+            <h2>
+              <%= pluralize(@page.errors.count, t('generic.error_while_saving.one'), t('generic.error_while_saving.other') ) %>
+            </h2>
+            <ul>
+              <% @page.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
       <div class="row">
         <div class="col-md-8">
           <div class="row">
@@ -19,6 +32,12 @@
             <div class="col-md-12">
               <%= f.label :meta_description, class:"required" %> <span class="chars-count">(<span>156</span>)</span>
               <%= f.text_area :meta_description %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <%= f.check_box :is_index %>
+              <%= f.label :is_index %></span>
             </div>
           </div>
           <div class="pull-right">

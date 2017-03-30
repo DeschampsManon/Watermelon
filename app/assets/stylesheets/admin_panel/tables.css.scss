@@ -134,3 +134,45 @@
     }
   }
 }
+
+.dataTables_info{
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-top:.8rem;
+}
+
+.dataTables_wrapper{
+  .dataTables_paginate{
+    margin-top: .8rem;
+    .paginate_button{
+      border: .1rem solid rgba(158,173,195,.16)!important;
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: $pink!important;
+      &:hover{
+        color:#2b2f33!important;
+        background-color: #f3f3f9!important;
+        border-color: rgba(158,173,195,.16)!important;
+        background-image: none;
+      }
+      &.current{
+        background-color: $pink!important;
+        background-image: none!important;
+        color: #fff!important;
+        &:hover{
+          color: #fff!important;
+        }
+      }
+      &:active{
+        box-shadow: none;
+        background: none;
+      }
+      &.disabled,
+      &.disabled:active,
+      &.disabled:focus,
+      &.disabled:hover{
+        color: #c5c5c5!important;
+      }
+    }
+  }
+}

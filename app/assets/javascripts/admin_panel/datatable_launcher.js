@@ -2,6 +2,10 @@ function datatable_params(){
     $('.datatable').DataTable({
         "language" : {
             search:         "",
+            paginate: {
+                previous:   '<',
+                next:       '>',
+            },
         }
     });
     // $('.datatable').DataTable({
