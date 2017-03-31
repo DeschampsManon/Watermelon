@@ -55,7 +55,16 @@ function mobile_nav(){
     main_header.css({ left : "-100%" });
 }
 
+function responsive_nav(boolean){
+    if( boolean == true){
+        $("#main-header").animate({ left : "0" }, {duration: 800, easing: 'easeOutBack'});
+    } else {
+        $("#main-header").animate({ left : "-100%" }, {duration: 800, easing: 'easeInBack'});
+    }
+}
+
 $(document).ready(function () {
+    page_width();
     change_main_nav_width();
     $("#min-nav-btn").click(function(){
         if($("#main-header").hasClass("min-nav")){
@@ -63,7 +72,12 @@ $(document).ready(function () {
         } else {
             min_nav(true);
         }
-
+    });
+    $("#burger-menu-open").click(function(){
+        responsive_nav(true)
+    });
+    $("#burger-menu-close").click(function(){
+        responsive_nav(false)
     });
 })
 

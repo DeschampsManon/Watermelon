@@ -145,6 +145,14 @@
   background-color: #fff;
   box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
   padding: 1rem 0;
+  #burger-menu-open{
+    float: left;
+    color: $pink;
+    font-size: 2.4rem;
+    cursor: pointer;
+    font-weight: 900;
+    display: none;
+  }
 }
 
 #page-header{
@@ -164,5 +172,26 @@
   a{
     margin-top: .5rem;
     font-weight: 400;
+  }
+}
+
+@media only screen and (max-width : 1300px) {
+  #main-header{
+    #min-nav-btn{
+      display: none!important;
+    }
+  }
+}
+
+@media only screen and (max-width : 760px) {
+  #main-header{
+    #burger-menu-close{
+      display: block!important;
+    }
+  }
+  #second-header{
+    #burger-menu-open{
+      display: block;
+    }
   }
 }
