@@ -1,0 +1,74 @@
+<header id="page-header">
+  <div class="container">
+    <div class="pull-left">
+      <h1><%= t '.page_title' %></h1>
+      <p class="subtitle">
+        <%= t '.page_description' %>
+      </p>
+    </div>
+    <%= link_to t('.create_user'), new_admin_page_url , class: "pull-right btn btn-primary" %>
+  </div>
+</header>
+
+<% if flash[:alert] %>
+    <div class="container">
+      <p class="alert alert-error">
+        <%= flash[:alert] %>
+      </p>
+    </div>
+<% end %>
+<% if flash[:notice] %>
+    <div class="container">
+      <p class="alert alert-success">
+        <%= flash[:notice] %>
+      </p>
+    </div>
+<% end %>
+
+<section class="clearfix margin-bot-20">
+  <div class="container">
+    <div class="white-content">
+      <table class="main-table datatable">
+        <thead>
+        <th class="no-sorting"><%= t '.user' %></th>
+        <th></th>
+        <th><%= t '.contact' %></th>
+        <th><%= t '.address' %></th>
+        <th><%= t '.admin' %></th>
+        <th class="no-sorting"><%= t '.actions' %></th>
+        </thead>
+        <tbody>
+        <% @users.each do |user| %>
+            <tr>
+              <td>thumbnail</td>
+              <td>
+                nom prénom
+              </td>
+              <td>
+                <a href="mailto:<%= user.email %>" class="mailto">
+                  <%= user.email %>
+                </a>
+              </td>
+              <td>e</td>
+              <td>
+                <i class="material-icons chip <%= user.has_role? :admin %>">
+                  fiber_manual_record
+                </i>
+              </td>
+              <td>
+                <!-- EDIT -->
+                <%= link_to edit_admin_user_path(user), :class => 'btn btn-primary' do %>
+                    <%= material_icon.mode_edit %>
+                <% end %>
+                <!-- DELETE -->
+                <%= link_to admin_user_path(user), method: :delete, data: { confirm: t('confirm_delete') }, :class => 'btn btn-danger' do %>
+                    <%= material_icon.delete %>
+                <% end if current_user != user %>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

@@ -8,5 +8,4 @@ Rails.application.config.assets.version = '1.0'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-Rails.application.config.assets.precompile += %w( admin_panel.css )
-Rails.application.config.assets.precompile += %w( admin_panel.js )
+Rails.application.config.assets.precompile += %w( admin_panel.css admin_panel.js i18n.js )

@@ -16,4 +16,6 @@
 //= require dataTables/jquery.dataTables
 //= require twitter/bootstrap
 //= require turbolinks
+//= require i18n
+//= require i18n/translations
 //= require_tree .

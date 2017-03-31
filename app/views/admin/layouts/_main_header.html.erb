@@ -25,6 +25,23 @@
       </div>
       <div>
         <li>
+          <h2><%= t '.users' %></h2>
+        </li>
+        <li>
+          <%= link_to admin_users_url do %>
+              <%= material_icon.people %>
+              <p><%= t '.users' %></p>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to admin_url do %>
+              <%= material_icon.face %>
+              <p><%= t '.my_profile' %></p>
+          <% end %>
+        </li>
+      </div>
+      <div>
+        <li>
           <h2><%= t '.content' %></h2>
         </li>
         <li>

@@ -52,6 +52,15 @@
           line-height: inherit;
         }
       }
+      .chip{
+        font-size: 1.8rem;
+        &.true {
+          color: $green;
+        }
+        &.false {
+          color: $red;
+        }
+      }
     }
   }
   &.datatable{

@@ -2,6 +2,7 @@ function datatable_params(){
     $('.datatable').DataTable({
         "language" : {
             search:         "",
+            info:           I18n.translate('datatable_info'),
             paginate: {
                 previous:   '<',
                 next:       '>',

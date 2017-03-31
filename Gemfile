@@ -40,6 +40,7 @@ gem 'pg', '~> 0.18'
 gem 'sqlite3'
 
 # GLOBALISATION & I18n
+gem 'i18n-js'
 
 group :development, :test do
   gem 'byebug', platform: :mri
