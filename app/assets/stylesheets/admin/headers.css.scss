@@ -27,7 +27,26 @@
             color: #858598;
             text-transform: capitalize;
             &:hover {
-              color: rgba(255, 255, 255, .8);;
+              color: rgba(255, 255, 255, .8);
+              .material-icons {
+                -moz-animation: 1s ease 0s normal none infinite swing;
+                -moz-transform-origin: center bottom;
+                -webkit-animation:swing .5s infinite ease-in-out;
+                -webkit-transform-origin:bottom;
+                animation-iteration-count: 1;
+
+                @-moz-keyframes swing{
+                  0%{-moz-transform:rotate(-5deg)}
+                  50%{-moz-transform:rotate(2deg)}
+                  100%{-moz-transform:rotate(-5deg)}
+                }
+
+                @-webkit-keyframes swing{
+                  0%{-webkit-transform:rotate(5deg)}
+                  50%{-webkit-transform:rotate(-2deg)}
+                  100%{-webkit-transform:rotate(5deg)}
+                }
+              }
             }
             p {
               float: left;
