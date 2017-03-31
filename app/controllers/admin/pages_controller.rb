@@ -20,7 +20,7 @@ class Admin::PagesController < AdminController
     @page = Admin::Page.new(page_params)
     respond_to do |format|
       if @page.save!
-        if @page.is_index == true
+        if @page.is_index && @index.present?
           @index.is_index = false
           @index.save!
         end
@@ -34,7 +34,7 @@ class Admin::PagesController < AdminController
   def update
     respond_to do |format|
       if @page.update(page_params)
-        if @page.is_index == true
+        if @page.is_index && @index.present?
           @index.is_index = false
           @index.save!
         end

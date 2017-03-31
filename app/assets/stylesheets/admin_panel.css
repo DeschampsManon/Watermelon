@@ -4,5 +4,5 @@
  *= require jquery-ui
  *= require dataTables/jquery.dataTables
  *= require material_icons
- *= require_tree ../stylesheets/admin_panel
+ *= require_tree ../stylesheets/admin
 */

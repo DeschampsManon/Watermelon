@@ -1,0 +1,11 @@
+fr:
+  admin:
+    layouts:
+      main_header:
+        overview: Vue d'ensemble
+        home: Tableau de bord
+        content: Contenu
+        pages: Pages
+        post: Articles
+        categories: Catégories
+

@@ -5,4 +5,5 @@
 //= require twitter/bootstrap
 //= require data-confirm-modal
 //= require dataTables/jquery.dataTables
-//= require_tree ../javascripts/admin_panel
+//= require jquery.validate
+//= require_tree ../javascripts/admin

@@ -19,6 +19,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-datatables-rails', '~> 3.4.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'jquery-validation-rails'
+gem 'therubyracer'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
@@ -42,6 +44,7 @@ gem 'sqlite3'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'capistrano-rails'
+  gem 'capistrano-bundler', '~> 1.1.2'
   gem 'pry-nav'
   gem 'pry-rails'
   gem 'pry-stack_explorer'

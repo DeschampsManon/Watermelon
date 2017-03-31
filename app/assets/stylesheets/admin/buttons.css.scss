@@ -10,9 +10,10 @@
   border:.1rem solid #339186;
   &:hover,
   &:active,
-  &:focus{
-    background-color: #33B0A2;
-    border-color: #339186;
+  &:focus,
+  &[disabled] {
+    background-color: #33B0A2!important;
+    border-color: #339186!important;
   }
 }
 
@@ -21,8 +22,9 @@
   border:.1rem solid #000026;
   &:hover,
   &:active,
-  &:focus{
-    background-color: #33335C;
-    border-color: #33335C;
+  &:focus,
+  &[disabled] {
+    background-color: #33335C!important;
+    border-color: #33335C!important;
   }
 }

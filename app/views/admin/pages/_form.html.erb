@@ -3,13 +3,13 @@
       <h2><%= t '.form_description' %></h2>
       <!-- ERRORS -->
       <% if @page.errors.any? %>
-          <div id="form-errors">
+          <div id="error_explanation">
             <h2>
               <%= pluralize(@page.errors.count, t('generic.error_while_saving.one'), t('generic.error_while_saving.other') ) %>
             </h2>
             <ul>
-              <% @page.errors.full_messages.each do |msg| %>
-                  <li><%= msg %></li>
+              <% @page.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
               <% end %>
             </ul>
           </div>

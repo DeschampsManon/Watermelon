@@ -7,9 +7,10 @@
   <%= javascript_include_tag 'admin_panel', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body>
+<body class="active-loader">
   <%= render 'admin/layouts/main_header' %>
   <%= render 'admin/layouts/second_header' %>
+  <%= render 'admin/layouts/page_loader' %>
   <div class="page">
     <%= yield %>
   </div>

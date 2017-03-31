@@ -17,6 +17,12 @@
         display: block;
         overflow: hidden;
         > li {
+          display: block;
+          overflow: hidden;
+          margin-bottom: .8rem;
+          &:last-child{
+            margin-bottom: 0;
+          }
           a {
             color: #858598;
             text-transform: capitalize;
