@@ -1,5 +1,6 @@
 class Admin::PagesController < AdminController
   before_action :set_admin_page, only: [:show, :edit, :update, :destroy]
+  before_action :get_current_index, only: [:update, :create]
 
   def index
     @pages = Admin::Page.all
@@ -18,7 +19,11 @@ class Admin::PagesController < AdminController
   def create
     @page = Admin::Page.new(page_params)
     respond_to do |format|
-      if @page.save
+      if @page.save!
+        if @page.is_index == true
+          @index.is_index = false
+          @index.save!
+        end
         format.html { redirect_to edit_admin_page_url(@page), notice: t('.successfully_created') }
       else
         format.html { render :new }
@@ -29,7 +34,11 @@ class Admin::PagesController < AdminController
   def update
     respond_to do |format|
       if @page.update(page_params)
-        format.html { redirect_to admin_page_url, notice: t('.successfully_updated') }
+        if @page.is_index == true
+          @index.is_index = false
+          @index.save!
+        end
+        format.html { redirect_to admin_pages_url, notice: t('.successfully_updated') }
       else
         format.html { render :edit }
       end
@@ -51,11 +60,16 @@ class Admin::PagesController < AdminController
       @page = Admin::Page.find(params[:id])
     end
 
+    def get_current_index
+      @index = Admin::Page.where(is_index: true).first
+    end
+
     def page_params
       params.require(:admin_page).permit(
           :name,
           :meta_description,
-          :page_title
+          :page_title,
+          :is_index
       )
     end
 end

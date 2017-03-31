@@ -1,1 +1,3 @@
-coucou
+<% @pages.each do |page| %>
+    <%= link_to page.name, home_url(page) %>
+<% end %>

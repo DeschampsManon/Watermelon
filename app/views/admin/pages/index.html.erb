@@ -56,66 +56,6 @@
                 <% end %>
               </td>
             </tr>
-            <tr>
-              <td>
-                image
-                <%= page.name %>
-                <% if page.is_index %>
-                    <span>(Index)</span>
-                <% end %>
-              </td>
-              <td>page.url</td>
-              <td>
-                <!-- EDIT -->
-                <%= link_to edit_admin_page_path(page), :class => 'btn btn-primary' do %>
-                    <%= material_icon.mode_edit %>
-                <% end %>
-                <!-- DELETE -->
-                <%= link_to admin_page_path(page), method: :delete, data: { confirm: t('are_you_sure') }, :class => 'btn btn-danger' do %>
-                    <%= material_icon.delete %>
-                <% end %>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                image
-                <%= page.name %>
-                <% if page.is_index %>
-                    <span>(Index)</span>
-                <% end %>
-              </td>
-              <td>page.url</td>
-              <td>
-                <!-- EDIT -->
-                <%= link_to edit_admin_page_path(page), :class => 'btn btn-primary' do %>
-                    <%= material_icon.mode_edit %>
-                <% end %>
-                <!-- DELETE -->
-                <%= link_to admin_page_path(page), method: :delete, data: { confirm: t('are_you_sure') }, :class => 'btn btn-danger' do %>
-                    <%= material_icon.delete %>
-                <% end %>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                image
-                <%= page.name %>
-                <% if page.is_index %>
-                    <span>(Index)</span>
-                <% end %>
-              </td>
-              <td>page.url</td>
-              <td>
-                <!-- EDIT -->
-                <%= link_to edit_admin_page_path(page), :class => 'btn btn-primary' do %>
-                    <%= material_icon.mode_edit %>
-                <% end %>
-                <!-- DELETE -->
-                <%= link_to admin_page_path(page), method: :delete, data: { confirm: t('are_you_sure') }, :class => 'btn btn-danger' do %>
-                    <%= material_icon.delete %>
-                <% end %>
-              </td>
-            </tr>
           <% end %>
         </tbody>
       </table>

@@ -42,6 +42,9 @@ gem 'sqlite3'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'capistrano-rails'
+  gem 'pry-nav'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
 end
 
 group :development do
