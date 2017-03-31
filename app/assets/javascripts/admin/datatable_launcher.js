@@ -1,5 +1,6 @@
 function datatable_params(){
     $('.datatable').DataTable({
+        responsive: true,
         "language" : {
             search:         "",
             info:           I18n.translate('datatable_info'),
