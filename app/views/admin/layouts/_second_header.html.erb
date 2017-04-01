@@ -6,7 +6,7 @@
           <li>
             <a href="#!">
               <div class="content-flex avatar-thumbnail pull-left">
-                <img src="<%= current_user.avatar(:thumb) %> onError="this.onerror=null;this.src='no-image.png'>
+                <%= image_tag current_user.avatar(:thumb), onerror:"this.onerror=null;this.src='#{image_url('no-image.png')}';" %>
               </div>
               <p class="pull-left">
                 <%= current_user.first_name %> <%= current_user.last_name %>
@@ -16,7 +16,7 @@
             <ul>
               <li class="user-profile">
                 <div class="content-flex pull-left">
-                  <img src="<%= current_user.avatar(:small) %> onError="this.onerror=null;this.src='no-image.png' class="user-avatar">
+                  <%= image_tag current_user.avatar(:small), onerror:"this.onerror=null;this.src='#{image_url('no-image.png')}';" %>
                 </div>
                 <div class="pull-left">
                   <p>

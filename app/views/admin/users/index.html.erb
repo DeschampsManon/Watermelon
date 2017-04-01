@@ -43,7 +43,7 @@
               <tr>
                 <td class="no-padding-right no-border-right">
                   <div class="content-flex avatar">
-                    <img src="<%= user.avatar(:thumb) %>">
+                    <%= image_tag user.avatar(:thumb), onerror:"this.onerror=null;this.src='#{image_url('no-image.png')}';" %>
                   </div>
                 </td>
                 <td class="no-padding-left no-border-left capitalize-text">
