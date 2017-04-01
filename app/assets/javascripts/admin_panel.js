@@ -9,4 +9,5 @@
 //= require i18n
 //= require i18n/translations
 //= require select2
+//= require select2_locale_fr
 //= require_tree ../javascripts/admin
