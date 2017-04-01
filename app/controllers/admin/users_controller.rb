@@ -14,7 +14,7 @@ class Admin::UsersController < AdminController
     @user.add_role params[:user][:role]
     generated_password = Devise.friendly_token.first(8)
     @user.password = generated_password
-    #UserMailer.welcome(@user, generated_password).deliver
+    UserMailer.welcome(@user, generated_password).deliver
     respond_to do |format|
       if @user.save!
         format.html { redirect_to admin_users_url, notice: t('.successfully_created') }
