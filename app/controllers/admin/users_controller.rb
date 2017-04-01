@@ -57,13 +57,20 @@ class Admin::UsersController < AdminController
     end
   end
 
+  def update_locale
+    locale = params[:id]
+    current_user.locale = locale
+    current_user.save!
+    redirect_to :back
+  end
+
   private
     def set_admin_user
       @user = User.find(params[:id])
     end
 
     def user_params_password
-      params.require(:user).permit(:current_password, :password, :password_confirmation)
+      params.require(:user).permit(:current_password, :password, :password_confirmation, :locale)
     end
 
     def user_params

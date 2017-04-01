@@ -6,5 +6,6 @@
  *= require material_icons
  *= require select2
  *= require select2-bootstrap
+ *= require flag_icon_css
  *= require_tree ../stylesheets/admin
 */

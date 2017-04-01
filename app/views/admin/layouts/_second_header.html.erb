@@ -1,7 +1,24 @@
 <header id="second-header">
   <div class="page">
       <div class="container">
-        <i class="material-icons" id="burger-menu-open">menu</i>
+        <ul id="header-user-shortcuts">
+          <li>
+            <i class="material-icons" id="burger-menu-open">menu</i>
+          </li>
+          <li>
+            <%= link_to "#!" do %>
+              <i class="flag-icon flag-icon-#{current_user.locale}"></i>
+            <% end %>
+            <ul>
+              <ul>
+                <% @locales = ["fr","gb"] %>
+                <% @locales.each do |locale| %>
+                    <li><%= link_to t(locale), controller: 'users', action: 'update_locale', id: locale %></li>
+                <% end %>
+              </ul>
+            </ul>
+          </li>
+        </ul>
         <ul id="user-data">
           <li>
             <a href="#!">

@@ -30,6 +30,7 @@ gem 'material_icons'
 
 #IMAGES
 gem 'paperclip', '~> 5.0.0'
+gem 'flag_icon_css_rails'
 
 #SERVER
 gem 'puma', '~> 3.0'

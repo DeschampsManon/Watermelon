@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :users do
       member do
         post 'update_password'
+        get 'update_locale'
         get 'my_password'
       end
     end

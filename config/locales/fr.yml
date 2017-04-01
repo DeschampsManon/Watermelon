@@ -1,4 +1,6 @@
 fr:
+  gb: Anglais
+  fr: Français
   datatable_info: Affichage des éléments _START_ à _END_ sur _TOTAL_
   datatable_zeroRecords: Aucun élément à afficher
   select2_noResults: Aucun élément à afficher
