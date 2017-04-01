@@ -20,7 +20,7 @@
       button{
         text-transform: uppercase;
         font-weight: 400;
-        background-color: transparent;
+        background-color: transparent!important;
         color: #333;
         padding: 0 3rem;
         border-radius: .2rem;
@@ -30,6 +30,8 @@
         &:active,
         &:focus{
           background-color: rgba(0, 0, 0, .08)!important;
+          -webkit-box-shadow: none;
+          box-shadow: none;
         }
       }
     }
