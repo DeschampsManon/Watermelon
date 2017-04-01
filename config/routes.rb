@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   get 'admin' => 'admin/home#index'
   namespace :admin do
     resources :pages
-    resources :users
+    resources :users do
+      member do
+        post 'update_password'
+        get 'my_password'
+      end
+    end
   end
 end

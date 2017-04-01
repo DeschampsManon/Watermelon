@@ -58,4 +58,10 @@ fr:
         successfully_created: L'utilisateur a bien été créé
       destroy:
         successfully_destroyed: L'utilisateur a bien été supprimé
+      my_password:
+        page_description: Cette page vous permet de modifier votre mot de passe
+        form_description: Les mots de passe doivent correspondre
+      update_password:
+        fail_change_password: Le mot de passe n'a pas été changé
+        successfully_updated: Le mot de passe a bien été modifié
 

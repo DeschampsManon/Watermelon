@@ -1,5 +1,5 @@
 class Admin::UsersController < AdminController
-  before_action :set_admin_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_admin_user, only: [:show, :edit, :update, :update_password, :my_password, :destroy]
 
   def index
     @users = User.all
@@ -38,8 +38,21 @@ class Admin::UsersController < AdminController
     respond_to do |format|
       if @user.destroy
         format.html { redirect_to admin_users_url, notice: t('.successfully_destroyed') }
+      end
+    end
+  end
+
+  def my_password
+
+  end
+
+  def update_password
+    respond_to do |format|
+      if @user.update_with_password(user_params_password)
+        sign_in @user, :bypass => true
+        format.html { redirect_to admin_url, notice: t('.successfully_updated') }
       else
-        format.html { redirect_to admin_users_url, notice: t('.error_occured') }
+        flash[:alert] = t('.fail_change_password')
       end
     end
   end
@@ -47,6 +60,10 @@ class Admin::UsersController < AdminController
   private
     def set_admin_user
       @user = User.find(params[:id])
+    end
+
+    def user_params_password
+      params.require(:user).permit(:current_password, :password, :password_confirmation)
     end
 
     def user_params
