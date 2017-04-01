@@ -21,7 +21,7 @@ class Admin::UsersController < AdminController
     #UserMailer.welcome(@user, generated_password).deliver
     respond_to do |format|
       if @user.save!
-        format.html { redirect_to edit_admin_user_url(@user), notice: t('.successfully_created') }
+        format.html { redirect_to admin_users_url, notice: t('.successfully_created') }
       else
         format.html { render :new }
       end

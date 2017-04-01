@@ -1,8 +1,7 @@
 $(document).ready(function(){
     dataConfirmModal.setDefaults({
-        title: 'Confirm your action',
-        content: 'a',
-        commit: 'a',
-        cancel: 'b'
+        title: I18n.translate('confirm_delete_title'),
+        commit: I18n.translate('confirm_delete_accept'),
+        cancel: I18n.translate('confirm_delete_refuse')
     });
 })

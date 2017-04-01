@@ -40,6 +40,14 @@ textarea{
   resize: none;
 }
 
+.hidden{
+  display: none;
+}
+
+.relative{
+  position: relative;
+}
+
 .container{
   max-width:128rem;
   width:100%;
@@ -63,14 +71,19 @@ textarea{
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  &.avatar{
-    border-radius:50%;
+  border: .1rem solid #dfe8f1;
+  box-shadow: inset 1px 1px 3px #f6f6f6;
+  -webkit-box-shadow: inset 1px 1px 3px #f6f6f6;
+  -moz-box-shadow: inset 1px 1px 3px #f6f6f6;
+  &.avatar {
+    border-radius: 50%;
     width: 5rem;
     height: 5rem;
-    border: .1rem solid #dfe8f1;
-    box-shadow: inset 1px 1px 3px #f6f6f6;
-    -webkit-box-shadow: inset 1px 1px 3px #f6f6f6;
-    -moz-box-shadow: inset 1px 1px 3px #f6f6f6;
+  }
+  &.form-file{
+    border-radius: 50%;
+    width: 15rem;
+    height: 15rem;
   }
   img{
     width: 100%;

@@ -2,6 +2,11 @@ fr:
   datatable_info: Affichage des éléments _START_ à _END_ sur _TOTAL_
   datatable_zeroRecords: Aucun élément à afficher
   select2_noResults: Aucun élément à afficher
+  wrong_image_format: Veuillez ajouter un format d'image valide
+  confirm_delete: Êtes vous sûr de vouloir supprimer cet élément ?
+  confirm_delete_title: Êtes vous sûr ?
+  confirm_delete_accept: J'accepte
+  confirm_delete_refuse: Retour
   activerecord:
       attributes:
         user:
@@ -41,4 +46,10 @@ fr:
         page_description: Cette page vous permet d'ajouter un utilisateur
       form:
         form_description: Les champs munis d'un astérisque sont obligatoires
+      update:
+        successfully_updated: Les informations de l'utilisateur ont bien été modifiées
+      create:
+        successfully_created: L'utilisateur a bien été créé
+      destroy:
+        successfully_destroyed: L'utilisateur a bien été supprimé
 

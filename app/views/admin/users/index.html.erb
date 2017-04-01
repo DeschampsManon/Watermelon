@@ -12,7 +12,7 @@
 
 <% if flash[:alert] %>
     <div class="container">
-      <p class="alert alert-error">
+      <p class="alert alert-danger">
         <%= flash[:alert] %>
       </p>
     </div>
@@ -46,7 +46,7 @@
                     <img src="<%= user.avatar(:thumb) %>">
                   </div>
                 </td>
-                <td class="no-padding-left no-border-left">
+                <td class="no-padding-left no-border-left capitalize-text">
                   <%= user.first_name %>
                   <%= user.last_name %>
                 </td>
@@ -56,14 +56,15 @@
                   </a>
                 </td>
                 <td>
-                  <%= user.address %>
-                  <%= user.city %>
+                  <%= user.address %><br>
+                  <%= user.city %>,
                   <%= user.zip_code %>
                 </td>
                 <td class="center-text ">
                   <i class="material-icons chip <%= user.has_role? :admin %>">
                     fiber_manual_record
                   </i>
+                  <p class="hidden"><%= user.roles %></p>
                 </td>
                 <td>
                   <div style="width:72px!important">
