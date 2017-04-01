@@ -1,5 +1,6 @@
 class UserMailer < ApplicationMailer
   def welcome(user, password)
+    binding.pry
     @user = user
     @password = password
     mail(
