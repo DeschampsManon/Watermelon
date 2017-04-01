@@ -41,9 +41,10 @@ gem 'rolify'
 
 #DATABASE
 gem 'pg', '~> 0.18'
+gem 'sqlite3'
 
 # GLOBALISATION & I18n
-gem 'i18n-js'
+gem 'i18n-js', '3.0.0.rc2'
 
 group :development, :test do
   gem 'byebug', platform: :mri
