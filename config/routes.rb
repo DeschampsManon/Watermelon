@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get 'show'
   end
 
+  get 'users/my_profile'  => 'users#my_profile'
   get 'admin' => 'admin/home#index'
   namespace :admin do
     resources :pages

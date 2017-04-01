@@ -9,10 +9,6 @@ class Admin::UsersController < AdminController
     @user = User.new
   end
 
-  def my_profile
-    @user = current_user
-  end
-
   def create
     @user = User.new(user_params)
     @user.add_role params[:user][:role]

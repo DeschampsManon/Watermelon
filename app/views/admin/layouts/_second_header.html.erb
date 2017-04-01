@@ -2,7 +2,43 @@
   <div class="page">
       <div class="container">
         <i class="material-icons" id="burger-menu-open">menu</i>
-        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+        <ul id="user-data">
+          <li>
+            <a href="#!">
+              <div class="content-flex avatar-thumbnail pull-left">
+                <img src="<%= current_user.avatar(:thumb) %> onError="this.onerror=null;this.src='no-image.png'>
+              </div>
+              <p class="pull-left">
+                <%= current_user.first_name %> <%= current_user.last_name %>
+                <%= material_icon.keyboard_arrow_down %>
+              </p>
+            </a>
+            <ul>
+              <li class="user-profile">
+                <div class="content-flex pull-left">
+                  <img src="<%= current_user.avatar(:small) %> onError="this.onerror=null;this.src='no-image.png' class="user-avatar">
+                </div>
+                <div class="pull-left">
+                  <p>
+                    <%= current_user.first_name %> <%= current_user.last_name %>
+                    <span><%= current_user.email%></span>
+                  </p>
+                  <%= link_to t('.edit_my_profile'), edit_admin_user_url(current_user) %>
+                </div>
+              </li>
+              <li class="user-shortcut">
+                <ul>
+                  <li>
+                    <%= link_to t('.change_my_password'), edit_admin_user_url(current_user) %>
+                  </li>
+                </ul>
+              </li>
+              <li class="user-logout">
+                <%= link_to( t('.logout'), destroy_user_session_path, :method => :delete, class: "btn btn-primary") %>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
   </div>
 </header>

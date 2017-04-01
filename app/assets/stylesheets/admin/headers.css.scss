@@ -153,12 +153,119 @@
     font-weight: 900;
     display: none;
   }
+  #user-data {
+    float: right;
+    > li {
+      position: relative;
+      > a {
+        color: $lightgrey;
+        text-transform: capitalize;
+        p {
+          padding: 1rem 0;
+          padding-left: .8rem;
+          font-weight: 600;
+          i{
+            font-size: 1.4rem;
+            position: relative;
+            top: .2rem;
+            font-weight: 900;
+          }
+        }
+      }
+      > ul {
+        display: none;
+        position: absolute;
+        z-index: 1000;
+        top: 4.5rem;
+        right: 0;
+        border-radius: .3rem;
+        border: .1rem solid rgba(158, 173, 195, .16);
+        box-shadow: 0 1px 7px 2px rgba(135, 158, 171, .2);
+        background-color: #fff;
+        padding: .5rem 0;
+        min-width: 30rem;
+        .user-profile{
+          padding: 1rem 2rem;
+          border-bottom: .1rem solid #dfe8f1;
+          display: block;
+          overflow: hidden;
+          .content-flex{
+            width: 8rem;
+            height: 8rem;
+            border: 0 solid transparent;
+          }
+          p{
+            font-weight: 300;
+            font-size: 1.5rem;
+            padding-bottom: 1rem;
+            > span {
+              color: #979ca3;
+              font-size: 1.3rem;
+            }
+          }
+          > div:last-child{
+            width: calc(100% - 8rem);
+            width: -webkit-calc(100% - 8rem);
+            width: -moz-calc(100% - 8rem);
+            padding-left: 1.5rem;
+          }
+          a{
+            font-weight: 300;
+            color: $aqua;
+            font-size: 1.2rem;
+            &:hover{
+              text-decoration: underline!important;
+            }
+          }
+        }
+        .user-shortcut{
+          ul{
+            display: block!important;
+            a {
+              display: block;
+              padding: .5rem 2rem;
+              color: #858598;
+              font-weight: 600;
+              font-size: 1.3rem;
+              &:after{
+                font-family: 'Material Icons';
+                content: 'keyboard_arrow_right';
+                float: right;
+              }
+              &:hover{
+                background-color: #eff4f6;
+                color: #2b2f33;
+              }
+            }
+          }
+        }
+        .user-logout{
+          border-top: .1rem solid rgba(158,173,195,.16);
+          padding: .5rem .5rem 0 .5rem;
+          display: block;
+          overflow: hidden;
+          .btn {
+            font-weight: 600!important;
+            display: block;
+            &:before{
+              font-family: 'Material Icons';
+              content: 'power_settings_new';
+              position: relative;
+              top: .2rem;
+              padding-right: .5rem;
+
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 #page-header{
   background-color: rgba(252,252,252,.89);
   padding: 2rem 0;
-  margin-top:4rem;
+  margin-top:6rem;
   margin-bottom:2rem;
   h1{
     font-size: 1.8rem;

@@ -66,6 +66,12 @@ function responsive_nav(boolean){
     }
 }
 
+function display_user_data(e){
+    e.preventDefault();
+    $(this).parent().find("ul").first().slideToggle();
+}
+
+
 $(document).ready(function () {
     main_header = $("#main-header");
     change_main_nav_width();
@@ -82,6 +88,7 @@ $(document).ready(function () {
     $("#burger-menu-close").click(function(){
         responsive_nav(false)
     });
+    $("#user-data > li > a").click(display_user_data);
 })
 
 $(window).resize(function () {

@@ -34,7 +34,7 @@
           <% end %>
         </li>
         <li>
-          <%= link_to admin_url do %>
+          <%= link_to edit_admin_user_url(current_user) do %>
               <%= material_icon.face %>
               <p><%= t '.my_profile' %></p>
           <% end %>

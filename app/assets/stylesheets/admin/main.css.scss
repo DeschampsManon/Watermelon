@@ -6,6 +6,7 @@ html {
 
 body{
   background-color: #F4F5F7;
+  font-family: 'Open Sans';
 }
 
 ul,
@@ -79,6 +80,11 @@ textarea{
     border-radius: 50%;
     width: 5rem;
     height: 5rem;
+  }
+  &.avatar-thumbnail{
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
   }
   &.form-file{
     border-radius: 50%;
