@@ -4,11 +4,13 @@ function datatable_params(){
         "language" : {
             search:         "",
             info:           I18n.translate('datatable_info'),
+            zeroRecords:    I18n.translate('datatable_zeroRecords'),
             paginate: {
                 previous:   '<',
                 next:       '>',
             },
-        }
+        },
+        stateSave: true,
     });
     // $('.datatable').DataTable({
     //     "language" : {

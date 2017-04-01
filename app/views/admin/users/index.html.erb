@@ -31,22 +31,22 @@
       <div class="table-responsive">
         <table class="main-table datatable">
           <thead>
-          <th class="no-sorting"><%= t '.user' %></th>
-          <th></th>
+          <th class="no-sorting no-padding-right no-border-right" width="8%"><%= t '.user' %></th>
+          <th class="no-padding-left no-border-left">&nbsp</th>
           <th><%= t '.contact' %></th>
           <th><%= t '.address' %></th>
-          <th><%= t '.admin' %></th>
-          <th class="no-sorting"><%= t '.actions' %></th>
+          <th width="70"><%= t '.admin' %></th>
+          <th class="no-sorting" width="60"><%= t '.actions' %></th>
           </thead>
           <tbody>
           <% @users.each do |user| %>
               <tr>
-                <td>
+                <td class="no-padding-right no-border-right">
                   <div class="content-flex avatar">
                     <img src="<%= user.avatar(:thumb) %>">
                   </div>
                 </td>
-                <td>
+                <td class="no-padding-left no-border-left">
                   <%= user.first_name %>
                   <%= user.last_name %>
                 </td>
@@ -60,20 +60,22 @@
                   <%= user.city %>
                   <%= user.zip_code %>
                 </td>
-                <td>
+                <td class="center-text ">
                   <i class="material-icons chip <%= user.has_role? :admin %>">
                     fiber_manual_record
                   </i>
                 </td>
                 <td>
-                  <!-- EDIT -->
-                  <%= link_to edit_admin_user_path(user), :class => 'btn btn-primary' do %>
-                      <%= material_icon.mode_edit %>
-                  <% end %>
-                  <!-- DELETE -->
-                  <%= link_to admin_user_path(user), method: :delete, data: { confirm: t('confirm_delete') }, :class => 'btn btn-danger' do %>
-                      <%= material_icon.delete %>
-                  <% end if current_user != user %>
+                  <div style="width:72px!important">
+                    <!-- EDIT -->
+                    <%= link_to edit_admin_user_path(user), :class => 'btn btn-primary' do %>
+                        <%= material_icon.mode_edit %>
+                    <% end %>
+                    <!-- DELETE -->
+                    <%= link_to admin_user_path(user), method: :delete, data: { confirm: t('confirm_delete') }, :class => 'btn btn-danger' do %>
+                        <%= material_icon.delete %>
+                    <% end if current_user != user %>
+                  </div>
                 </td>
               </tr>
           <% end %>

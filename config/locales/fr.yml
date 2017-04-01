@@ -1,5 +1,6 @@
 fr:
   datatable_info: Affichage des éléments _START_ à _END_ sur _TOTAL_
+  datatable_zeroRecords: Aucun élément à afficher
   activerecord:
       attributes:
         user:
@@ -27,7 +28,7 @@ fr:
         page_title: Gérer les utilisateurs
         page_description: Cette page vous permet de modifiez ou de supprimer un utilisateur
         create_user: Ajouter un utilisateur
-        user: Utilisateur
+        user: Utilisateurs
         contact: Contact
         address: Adresse
         admin: Admin

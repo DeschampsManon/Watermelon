@@ -7,17 +7,15 @@
 .main-table{
   width: 100%;
   border-collapse: collapse !important;
+  table-layout: auto;
   th{
     padding: 1rem 1.8rem;
     text-align: left;
     background-color: #fff;
-    border: .1rem solid rgba(158,173,195,.16)!important;
-    border-left: 0;
+    border: .1rem solid rgba(158,173,195,.16);
+    border-bottom-color: rgba(158,173,195,.16)!important;
     font-size: 1.3rem;
     text-transform: capitalize;
-    &:first-child{
-      border-left:.1rem solid rgba(158,173,195,.16);
-    }
     &:focus{
       outline: none;
     }
