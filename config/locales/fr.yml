@@ -1,5 +1,16 @@
 fr:
-  datatable_info: Affichage de l'élément _START_ à _END_ sur _TOTAL_ éléments
+  datatable_info: Affichage des éléments _START_ à _END_ sur _TOTAL_
+  activerecord:
+      attributes:
+        user:
+          first_name: Prénom
+          last_name: Nom
+          role: Rôle
+          email: Email
+          phone: Téléphone
+          address: Adresse
+          city: Ville
+          zip_code: Code Postal
   admin:
     layouts:
       main_header:
@@ -23,4 +34,9 @@ fr:
         actions: Actions
         destroy:
           successfully_destroyed: L'utilisateur a bien été supprimé
+      new:
+        page_title: Ajouter un utilisateur
+        page_description: Cette page vous permet d'ajouter un utilisateur
+      form:
+        form_description: Les champs munis d'un astérisque sont obligatoires
 

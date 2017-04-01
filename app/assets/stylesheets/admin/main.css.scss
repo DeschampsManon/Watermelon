@@ -57,3 +57,24 @@ textarea{
 .page{
   float:right;
 }
+
+.content-flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  &.avatar{
+    border-radius:50%;
+    width: 5rem;
+    height: 5rem;
+    border: .1rem solid #dfe8f1;
+    box-shadow: inset 1px 1px 3px #f6f6f6;
+    -webkit-box-shadow: inset 1px 1px 3px #f6f6f6;
+    -moz-box-shadow: inset 1px 1px 3px #f6f6f6;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    max-width: inherit;
+  }
+}

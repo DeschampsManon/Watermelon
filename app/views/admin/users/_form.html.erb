@@ -1,0 +1,54 @@
+<div class="white-content">
+  <%= form_for(@user, url: {action: @user.new_record? ? "create" : "update"}, html: { class: "main-form clearfix" }) do |f| %>
+      <h2><%= t '.form_description' %></h2>
+
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar %>
+
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.label :first_name, class:"required" %>
+          <%= f.text_field :first_name %>
+        </div>
+        <div class="col-md-6">
+          <%= f.label :last_name, class:"required" %>
+          <%= f.text_field :last_name %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.label :role %>
+          <%= f.select :roles, options_from_collection_for_select( Role.all ,"id", "name" ), {:include_blank => '--'}, class: "select2" %>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <%= f.label :email, class:"required" %>
+            <%= f.text_field :email %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.label :phone %>
+          <%= f.text_field :phone %>
+        </div>
+        <div class="col-md-6">
+          <%= f.label :address, class:"required" %>
+          <%= f.text_field :address %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.label :city, class:"required" %>
+          <%= f.text_field :city %>
+        </div>
+        <div class="col-md-6">
+          <%= f.label :zip_code, class:"required" %>
+          <%= f.text_field :zip_code %>
+        </div>
+      </div>
+      <div class="pull-right">
+        <%= f.submit :class => "btn btn-primary" %>
+      </div>
+  <% end %>
+</div>

@@ -11,6 +11,7 @@ gem 'rails', '~> 5.0.1'
 #CSS
 gem 'data-confirm-modal'
 gem 'sass-rails'
+gem 'select2-rails'
 gem 'twitter-bootstrap-rails'
 
 #JS
@@ -26,6 +27,9 @@ gem 'uglifier', '>= 1.3.0'
 
 #ICONS
 gem 'material_icons'
+
+#IMAGES
+gem 'paperclip', '~> 5.0.0'
 
 #SERVER
 gem 'puma', '~> 3.0'

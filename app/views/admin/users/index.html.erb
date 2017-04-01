@@ -6,7 +6,7 @@
         <%= t '.page_description' %>
       </p>
     </div>
-    <%= link_to t('.create_user'), new_admin_page_url , class: "pull-right btn btn-primary" %>
+    <%= link_to t('.create_user'), new_admin_user_url , class: "pull-right btn btn-primary" %>
   </div>
 </header>
 
@@ -41,16 +41,25 @@
           <tbody>
           <% @users.each do |user| %>
               <tr>
-                <td>thumbnail</td>
                 <td>
-                  nom prénom
+                  <div class="content-flex avatar">
+                    <img src="<%= user.avatar(:thumb) %>">
+                  </div>
+                </td>
+                <td>
+                  <%= user.first_name %>
+                  <%= user.last_name %>
                 </td>
                 <td>
                   <a href="mailto:<%= user.email %>" class="mailto">
                     <%= user.email %>
                   </a>
                 </td>
-                <td>e</td>
+                <td>
+                  <%= user.address %>
+                  <%= user.city %>
+                  <%= user.zip_code %>
+                </td>
                 <td>
                   <i class="material-icons chip <%= user.has_role? :admin %>">
                     fiber_manual_record

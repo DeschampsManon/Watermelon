@@ -4,5 +4,7 @@
  *= require jquery-ui
  *= require dataTables/jquery.dataTables
  *= require material_icons
+ *= require select2
+ *= require select2-bootstrap
  *= require_tree ../stylesheets/admin
 */
