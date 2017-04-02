@@ -16,11 +16,14 @@
     </ul>
   </nav>
   <div class="tab-content">
-    <div class="tab-pane" id="page">
+    <div class="tab-pane active" id="page">
     <%= render partial: 'admin/pages/editor/form_global', locals: {f: f} %>
     </div>
     <div class="tab-pane" id="design">
     <%= render partial: 'admin/pages/editor/form_design', locals: {f: f} %>
     </div>
+  </div>
+  <div class="col-md-12">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
   </div>
 <% end %>

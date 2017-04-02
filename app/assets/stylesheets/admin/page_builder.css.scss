@@ -40,7 +40,7 @@
           > a{
             border: 0 solid transparent;
             border-radius: 0;
-            background: rgb(250, 249, 250);
+            background-color: rgb(250, 249, 250);
             color: #555;
             font-weight: 300;
             font-size: 1.2rem;
@@ -48,7 +48,7 @@
           &.active {
             a {
               background-color: #3a3948;
-              color:#fff;
+              color: rgba(255, 255, 255,.8);
             }
           }
         }
