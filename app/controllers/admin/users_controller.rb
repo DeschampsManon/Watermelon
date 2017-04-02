@@ -11,12 +11,12 @@ class Admin::UsersController < AdminController
 
   def create
     @user = User.new(user_params)
-    @user.add_role params[:user][:role]
-    generated_password = Devise.friendly_token.first(8)
-    @user.password = generated_password
-    UserMailer.welcome(@user, generated_password).deliver
     respond_to do |format|
+      #@user.add_role params[:user][:roles]
       if @user.save!
+        generated_password = Devise.friendly_token.first(8)
+        @user.password = generated_password
+        UserMailer.welcome(@user, generated_password).deliver
         format.html { redirect_to admin_users_url, notice: t('.successfully_created') }
       else
         format.html { render :new }
@@ -26,6 +26,7 @@ class Admin::UsersController < AdminController
 
   def update
     respond_to do |format|
+      #@user.add_role params[:user][:roles]
       if @user.update(user_params)
         format.html { redirect_to admin_users_url, notice: t('.successfully_updated') }
       else
@@ -83,7 +84,7 @@ class Admin::UsersController < AdminController
           :address,
           :city,
           :zip_code,
-          :role
+          #roles: []
       )
     end
 end

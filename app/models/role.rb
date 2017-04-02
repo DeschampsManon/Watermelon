@@ -12,6 +12,6 @@ class Role < ApplicationRecord
   scopify
 
   def translated_name
-    I18n.t(name, :scope => 'role')
+    I18n.t(name, scope: 'role')
   end
 end

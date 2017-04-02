@@ -6,17 +6,25 @@
             <i class="material-icons" id="burger-menu-open">menu</i>
           </li>
           <li id="locale">
-            <%= link_to "", "#!", class: "flag-icon flag-icon-#{current_user.locale}" %>
+            <% if current_user.locale == "en" %>
+              <%= link_to "", "#!", class: "flag-icon flag-icon-gb" %>
+            <% else %>
+              <%= link_to "", "#!", class: "flag-icon flag-icon-#{current_user.locale}" %>
+            <% end %>
             <ul>
               <h4>
                 <%= t '.langue' %>
               </h4>
               <div class="content">
-                <% @locales = ["fr","gb"] %>
+                <% @locales = ["fr","en"] %>
                 <% @locales.each do |locale| %>
                     <li>
-                      <%= link_to "#!",controller: 'users', action: 'update_locale', id: locale do %>
-                          <i class="flag-icon flag-icon-<%= locale %>"></i>
+                      <%= link_to controller: 'users', action: 'update_locale', id: locale do %>
+                          <% if locale == "en" %>
+                            <i class="flag-icon flag-icon-gb"></i>
+                          <% else %>
+                              <i class="flag-icon flag-icon-<%= locale %>"></i>
+                          <% end %>
                           <%= t(locale) %>
                       <% end %>
                     </li>
