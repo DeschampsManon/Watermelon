@@ -20,6 +20,11 @@ fr:
           address: Adresse
           city: Ville
           zip_code: Code Postal
+        admin_page:
+          name: Nom
+          page_title: Titre
+          meta_description:
+          is_index: Définir cette page comme page d'accueil
   role:
     admin: Administrateur
     member: Membre

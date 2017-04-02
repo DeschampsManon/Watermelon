@@ -39,11 +39,20 @@
         input[type="text"],
         textarea{
           border-color: #5c5967;
+          border-radius: .3rem;
           background-color: rgba(255,255,255,.9);
           box-shadow: inset 1px 1px 3px #9b97a9;
           -moz-box-shadow: inset 1px 1px 3px #9b97a9;
           -webkit-box-shadow: inset 1px 1px 3px #9b97a9;
           color: #666;
+        }
+        input[type="checkbox"] + label:before,
+        input[type="checkbox"]:checked + label:before{
+          border-color: #5c5967;
+          background-color: rgba(255,255,255,.9);
+          box-shadow: inset 1px 1px 3px #9b97a9;
+          -moz-box-shadow: inset 1px 1px 3px #9b97a9;
+          -webkit-box-shadow: inset 1px 1px 3px #9b97a9;
         }
         input[type="submit"]{
           margin-top: 2rem;
