@@ -4,8 +4,6 @@
     <list default="true" id="e79383f6-0694-4764-88f0-d34e11b54953" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/admin/headers.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/admin/headers.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/layouts/_second_header.html.erb" afterPath="$PROJECT_DIR$/app/views/admin/layouts/_second_header.html.erb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -54,8 +52,8 @@
       <file leaf-file-name="headers.css.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/admin/headers.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="196" column="16" lean-forward="false" selection-start-line="196" selection-start-column="16" selection-end-line="196" selection-end-column="16" />
+            <state relative-caret-position="107">
+              <caret line="170" column="21" lean-forward="false" selection-start-line="170" selection-start-column="21" selection-end-line="170" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -934,12 +932,12 @@
       <workItem from="1490796287713" duration="5969000" />
       <workItem from="1490807234347" duration="76937000" />
       <workItem from="1491084888793" duration="1760000" />
-      <workItem from="1491087033203" duration="6345000" />
+      <workItem from="1491087033203" duration="6484000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104024000" />
+    <option name="totallyTimeSpent" value="104163000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1372,8 +1370,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/admin/headers.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="196" column="16" lean-forward="false" selection-start-line="196" selection-start-column="16" selection-end-line="196" selection-end-column="16" />
+        <state relative-caret-position="107">
+          <caret line="170" column="21" lean-forward="false" selection-start-line="170" selection-start-column="21" selection-end-line="170" selection-end-column="21" />
           <folding />
         </state>
       </provider>

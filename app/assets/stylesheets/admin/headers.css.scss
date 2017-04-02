@@ -168,6 +168,7 @@
         }
       }
       > ul {
+        display: none;
         position: absolute;
         top: 3rem;
         left: -1rem;
@@ -198,6 +199,9 @@
             border-bottom: .1rem solid #ebebeb;
             font-size: 1.2rem;
             font-weight: 300;
+            &:last-child{
+              border-bottom: 0 solid transparent;
+            }
             a {
               color: #333;
               display: block;
