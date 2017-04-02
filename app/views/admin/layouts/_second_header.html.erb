@@ -5,17 +5,21 @@
           <li>
             <i class="material-icons" id="burger-menu-open">menu</i>
           </li>
-          <li>
-            <%= link_to "#!" do %>
-              <i class="flag-icon flag-icon-#{current_user.locale}"></i>
-            <% end %>
+          <li id="locale">
+            <%= link_to "", "#!", class: "flag-icon flag-icon-#{current_user.locale}" %>
             <ul>
-              <ul>
+              <h4>
+                <%= t '.langue' %>
+              </h4>
+              <div class="content">
                 <% @locales = ["fr","gb"] %>
                 <% @locales.each do |locale| %>
-                    <li><%= link_to t(locale), controller: 'users', action: 'update_locale', id: locale %></li>
+                    <li>
+                      <i class="flag-icon flag-icon-<%= locale %>"></i>
+                      <%= link_to t(locale), controller: 'users', action: 'update_locale', id: locale %>
+                    </li>
                 <% end %>
-              </ul>
+              </div>
             </ul>
           </li>
         </ul>

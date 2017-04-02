@@ -88,7 +88,7 @@ $(document).ready(function () {
     $("#burger-menu-close").click(function(){
         responsive_nav(false)
     });
-    $("#user-data > li > a").click(display_user_data);
+    $("#user-data > li > a, #header-user-shortcuts > li > a").click(display_user_data);
 })
 
 $(window).resize(function () {
