@@ -195,15 +195,16 @@
         }
         .content {
           > li {
-            padding: 1rem 1.5rem;
             border-bottom: .1rem solid #ebebeb;
             font-size: 1.2rem;
             font-weight: 300;
-            &:hover{
-              background-color: #eff4f6;
-            }
             a {
               color: #333;
+              display: block;
+              padding: 1rem 1.5rem;
+              &:hover{
+                background-color: #eff4f6;
+              }
             }
             .flag-icon {
               font-size: 1.3rem;

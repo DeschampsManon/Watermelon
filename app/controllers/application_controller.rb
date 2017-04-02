@@ -11,7 +11,14 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    I18n.locale = extract_locale_from_accept_language_header || I18n.default_locale
+    if current_user.present? && current_user.locale?
+      if current_user.locale == "gb"
+        current_user.locale = "en"
+      end
+      I18n.locale = current_user.locale
+    else
+      I18n.locale = extract_locale_from_accept_language_header || I18n.default_locale
+    end
   end
 
   private
