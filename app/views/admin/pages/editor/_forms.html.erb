@@ -1,0 +1,26 @@
+<%= form_for(@page, html: { class: 'clearfix main-form'}, remote: true) do |f| %>
+  <nav>
+    <ul class="nav nav-tabs nav-justified">
+      <li class="active">
+        <%= link_to '#page', data: {toggle: 'tab'} do %>
+          <%= material_icon.description %>
+          <p><%= t '.page' %></p>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to '#design', data: {toggle: 'tab'} do %>
+            <%= material_icon.format_paint %>
+          <p><%= t '.personalize' %></p>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+  <div class="tab-content">
+    <div class="tab-pane" id="page">
+    <%= render partial: 'admin/pages/editor/form_global', locals: {f: f} %>
+    </div>
+    <div class="tab-pane" id="design">
+    <%= render partial: 'admin/pages/editor/form_design', locals: {f: f} %>
+    </div>
+  </div>
+<% end %>

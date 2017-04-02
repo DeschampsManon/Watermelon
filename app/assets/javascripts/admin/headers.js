@@ -12,7 +12,11 @@ function page_width(main_header_width){
 
 function change_main_nav_width(){
     if( $(window).width() >= 1300 ){
-        max_nav(false);
+        if ($("body").hasClass(("pages edit"))){
+            min_nav(false);
+        } else {
+            max_nav(false);
+        }
     } else if ( $(window).width() <= 1300 && $(window).width() >= 760 ) {
         min_nav(false);
     } else {
