@@ -1,5 +1,5 @@
 class Admin::PagesController < AdminController
-  before_action :set_admin_page, only: [:show, :edit, :update, :destroy]
+  before_action :set_admin_page, only: [:show, :edit, :update, :destroy, :preview]
   before_action :get_current_index, only: [:update, :create]
 
   def index
@@ -14,6 +14,10 @@ class Admin::PagesController < AdminController
   end
 
   def edit
+  end
+
+  def preview
+    render layout: false
   end
 
   def create
@@ -69,7 +73,8 @@ class Admin::PagesController < AdminController
           :name,
           :meta_description,
           :page_title,
-          :is_index
+          :is_index,
+          :source
       )
     end
 end

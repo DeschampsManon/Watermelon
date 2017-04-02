@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   get 'users/my_profile'  => 'users#my_profile'
   get 'admin' => 'admin/home#index'
   namespace :admin do
-    resources :pages
+    resources :pages do
+      member do
+        get 'preview'
+      end
+    end
     resources :users do
       member do
         post 'update_password'

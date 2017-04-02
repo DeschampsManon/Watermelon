@@ -8,7 +8,7 @@
   <%= javascript_include_tag 'admin_panel', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body class="active-loader">
+<body class="active-loader <%= controller.controller_name %> <%= controller.action_name %>">
   <%= render 'admin/layouts/main_header' %>
   <%= render 'admin/layouts/second_header' %>
   <%= render 'admin/layouts/page_loader' %>
