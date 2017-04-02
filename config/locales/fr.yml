@@ -20,6 +20,9 @@ fr:
           address: Adresse
           city: Ville
           zip_code: Code Postal
+  role:
+    admin: Administrateur
+    member: Membre
   admin:
     layouts:
       main_header:
