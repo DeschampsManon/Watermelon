@@ -51,6 +51,7 @@
   }
   .select2{
     width: 100%!important;
+    margin-bottom: 1.5rem;
     .select2-selection{
       border: .1rem solid #dfe8f1;
       box-shadow: inset 1px 1px 3px #f6f6f6;
@@ -102,5 +103,27 @@
   }
   .select2-results__option--highlighted[aria-selected]{
     background-color: $aqua;
+  }
+}
+
+@media only screen and (max-width : 630px) {
+  .main-form {
+    .pull-left {
+      float: none!important;
+    }
+    #user-form{
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width : 400px) {
+  .main-form {
+    .pull-right {
+      float: none!important;
+    }
+    input[type="submit"]{
+      width: 100%;
+    }
   }
 }
