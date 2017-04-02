@@ -32,7 +32,7 @@
                 <%= image_tag current_user.avatar(:thumb), onerror:"this.onerror=null;this.src='#{image_url('no-image.png')}';" %>
               </div>
               <p class="pull-left">
-                <%= current_user.first_name %> <%= current_user.last_name %>
+                <span class="hide-630"><%= current_user.first_name %> <%= current_user.last_name %></span>
                 <%= material_icon.keyboard_arrow_down %>
               </p>
             </a>
