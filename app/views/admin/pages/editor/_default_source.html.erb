@@ -1,48 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Plezi Landing Page Template</title>
-
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.css">
-
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-</head>
-<body>
-<div id="ossBlocks">
-  <div class="ossBlockGroup" oss-type="text" style="">
-    <div class="row" style="">
-      <div class="ossBlock col-sm-12">
-        <div class="ossElement" ossElementType="text">
-          <h1 style="text-align: center;">This is a header</h1>
-        </div>
+<section class="clearfix main-container">
+  <ul class="block-settings">
+    <li>
+      <%= link_to "#!", class: "edit-main-container" do %>
+          <i class="material-icons">
+            settings
+          </i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to "#!", class: "duplicate-main-container" do %>
+          <i class="material-icons">
+            library_add
+          </i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to "#!", class: "column-main-container", data: {toggle: "modal", target: "#column-modal"}  do %>
+          <i class="material-icons">
+            view_column
+          </i>
+      <% end %>
+    </li>
+    <li class="">
+      <%= link_to "#!", class: "delete-main-container" do %>
+          <i class="material-icons">
+            delete_forever
+          </i>
+      <% end %>
+    </li>
+  </ul>
+  <div class="container">
+    <div class="module-container">
+      <div class="row">
+        <article class="col-md-12 text-module">
+          <h1>Lorem Ipsum</h1>
+          <p>
+            Non ergo erunt homines deliciis diffluentes audiendi, si quando de amicitia, quam nec usu nec ratione habent cognitam, disputabunt. Nam quis est, pro deorum fidem atque hominum! qui velit, ut neque diligat quemquam nec ipse ab ullo diligatur, circumfluere omnibus copiis atque in omnium rerum abundantia vivere? Haec enim est tyrannorum vita nimirum, in qua nulla fides, nulla caritas, nulla stabilis benevolentiae potest esse fiducia, omnia semper suspecta atque sollicita, nullus locus amicitiae.
+          </p>
+        </article>
       </div>
     </div>
   </div>
-  <div class="ossBlockGroup" oss-type="text" oss-multi="1">
-    <div class="row" style="">
-      <div class="ossBlock col-sm-12">
-        <div class="ossElement" ossElementType="text">
-          This is a text element. You can add unlimited amounts of text in this element, enlarge fonts to create a title, or break text to separate paragraphs. Feel free to play around and let your imagination work. Ossleads' landing page editor is virtually limitless...
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-</body>
-</html>
+</section>

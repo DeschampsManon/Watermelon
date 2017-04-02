@@ -1,0 +1,33 @@
+ul,
+ol{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p{
+  margin: 0;
+}
+
+input,
+select,
+textarea,
+button,
+a {
+  &:active,
+  &:focus{
+    outline: none!important;
+  }
+}
+
+a {
+  text-decoration: none!important;
+}
+
+textarea{
+  resize: none;
+}

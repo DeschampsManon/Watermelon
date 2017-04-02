@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails watermelon: test" uuid="a398ba7c-8414-4c4c-98a3-b2670cbf89f8">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+    </data-source>
+    <data-source name="Rails watermelon: production" uuid="5299bdc8-b129-4bae-8956-f1f2c6c415dc">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <user-name>watermelon</user-name>
+    </data-source>
+    <data-source name="Rails watermelon: development" uuid="13ccb7c5-d695-48d6-9e5a-4837baa31103">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+    </data-source>
+  </component>
+</project>

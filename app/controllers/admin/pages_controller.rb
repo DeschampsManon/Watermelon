@@ -17,7 +17,7 @@ class Admin::PagesController < AdminController
   end
 
   def preview
-    render layout: false
+    render layout: 'application'
   end
 
   def create
