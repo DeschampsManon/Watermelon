@@ -1,12 +1,38 @@
 @import "../admin/variables";
 
-.main-block{
-  cursor: pointer;
-  .container{
-    max-width: 128rem;
-    width: inherit;
+#front-content{
+  .main-container{
+    cursor: pointer;
+    padding: 2rem 0;
+    .container{
+      max-width: 128rem;
+      width: inherit;
+      .module-container{
+        padding: 0 1.5rem;
+        .no-module {
+          border:.2rem solid $darkpurple;
+          border-radius: .4rem;
+          text-align: center;
+          padding: .4rem 0 .8rem 0;
+          color:$darkpurple;
+          &:hover{
+            opacity:.7;
+          }
+          p{
+            &:before{
+              font-family: 'Material Icons';
+              content: "add_box";
+              font-size: 1.8rem;
+              position: relative;
+              top: .4rem;
+            }
+          }
+        }
+      }
+    }
   }
 }
+
 
 
 //

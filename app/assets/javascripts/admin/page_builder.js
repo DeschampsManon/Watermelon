@@ -30,7 +30,15 @@ function browser_search_result_preview() {
     $(this).parent().find(".chars-count span").text(limit - value.length);
 }
 
+var $iframe;
+
+function set_css_properties(){
+    //alert($iframe.length)
+}
+
 $(document).ready(function () {
     get_domain_name()
     $("#admin_page_page_title, #admin_page_meta_description, #admin_page_name").keyup(browser_search_result_preview);
+    $iframe = $("iframe#preview-page-builder").contents();
+    set_css_properties();
 })
