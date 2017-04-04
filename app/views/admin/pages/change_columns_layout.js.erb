@@ -1,0 +1,9 @@
+$("#columns-modal").modal("hide");
+
+var $columns_$parent = $iframe.find(".current-container .module-container .row");
+
+$columns_$parent.empty();
+
+<% eval(@layout).each do |layout| %>
+  $columns_$parent.append("<%= j render 'admin/pages/editor/module_container', {column_width: layout } %>");
+<% end %>

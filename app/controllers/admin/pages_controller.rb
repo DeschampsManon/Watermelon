@@ -28,7 +28,7 @@ class Admin::PagesController < AdminController
           @index.is_index = false
           @index.save!
         end
-        format.html { redirect_to edit_admin_page_url(@page), notice: t('.successfully_created') }
+        format.html { redirect_to edit_admin_page_url(@page) }
       else
         format.html { render :new }
       end
@@ -42,7 +42,7 @@ class Admin::PagesController < AdminController
           @index.is_index = false
           @index.save!
         end
-        format.html { redirect_to admin_pages_url, notice: t('.successfully_updated') }
+        format.html { redirect_to edit_admin_page_url(@page), notice: t('.successfully_updated') }
       else
         format.html { render :edit }
       end
@@ -56,6 +56,13 @@ class Admin::PagesController < AdminController
       else
         format.html { redirect_to admin_pages_url, notice: t('.error_occured') }
       end
+    end
+  end
+
+  def change_columns_layout
+    @layout = params[:layout]
+    respond_to do |format|
+      format.js
     end
   end
 

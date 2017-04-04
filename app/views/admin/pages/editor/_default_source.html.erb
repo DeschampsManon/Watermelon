@@ -12,54 +12,35 @@
 </section>
 
 <section class="clearfix main-container">
+  <ul class="main-container-settings">
+    <div class="pull-right">
+      <li>
+        <%= link_to "#!", class: "edit-main-container" do %>
+            <%= material_icon.settings %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "#!", class: "duplicate-main-container" do %>
+            <%= material_icon.library_add %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "#!", class: "column-main-container", data: {toggle: "modal", target: "#column-modal"}  do %>
+            <%= material_icon.view_column %>
+        <% end %>
+      </li>
+      <li class="">
+        <%= link_to "#!", class: "delete-main-container" do %>
+            <%= material_icon.delete_forever %>
+        <% end %>
+      </li>
+    </div>
+  </ul>
   <div class="container">
     <div class="module-container">
       <div class="row">
-        <article class="col-md-12 no-module">
-          <p>
-            <%= t '.add_module' %>
-          </p>
-        </article>
+        <%= render 'admin/pages/editor/module_container' %>
       </div>
     </div>
   </div>
 </section>
-
-
-<!--<section class="clearfix main-container">-->
-  <!--<ul class="block-settings">-->
-    <!--<li>-->
-      <!--<%= link_to "#!", class: "edit-main-container" do %>-->
-          <!--<i class="material-icons">-->
-            <!--settings-->
-          <!--</i>-->
-      <!--<% end %>-->
-    <!--</li>-->
-    <!--<li>-->
-      <!--<%= link_to "#!", class: "duplicate-main-container" do %>-->
-          <!--<i class="material-icons">-->
-            <!--library_add-->
-          <!--</i>-->
-      <!--<% end %>-->
-    <!--</li>-->
-    <!--<li>-->
-      <!--<%= link_to "#!", class: "column-main-container", data: {toggle: "modal", target: "#column-modal"}  do %>-->
-          <!--<i class="material-icons">-->
-            <!--view_column-->
-          <!--</i>-->
-      <!--<% end %>-->
-    <!--</li>-->
-    <!--<li class="">-->
-      <!--<%= link_to "#!", class: "delete-main-container" do %>-->
-          <!--<i class="material-icons">-->
-            <!--delete_forever-->
-          <!--</i>-->
-      <!--<% end %>-->
-    <!--</li>-->
-  <!--</ul>-->
-  <!--<div class="container">-->
-    <!--<div class="module-container">-->
-
-    <!--</div>-->
-  <!--</div>-->
-<!--</section>-->

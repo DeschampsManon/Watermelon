@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :pages do
       member do
         get 'preview'
+        get 'change_columns_layout'
       end
     end
     resources :users do

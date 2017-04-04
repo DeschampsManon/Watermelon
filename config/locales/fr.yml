@@ -1,3 +1,4 @@
+
 fr:
   gb: Anglais
   fr: Français
@@ -10,21 +11,21 @@ fr:
   confirm_delete_accept: J'accepte
   confirm_delete_refuse: Retour
   activerecord:
-      attributes:
-        user:
-          first_name: Prénom
-          last_name: Nom
-          role: Rôle
-          email: Email
-          phone: Téléphone
-          address: Adresse
-          city: Ville
-          zip_code: Code Postal
-        admin_page:
-          name: Nom
-          page_title: Titre
-          meta_description:
-          is_index: Définir cette page comme page d'accueil
+    attributes:
+      user:
+        first_name: Prénom
+        last_name: Nom
+        role: Rôle
+        email: Email
+        phone: Téléphone
+        address: Adresse
+        city: Ville
+        zip_code: Code Postal
+      admin_page:
+        name: Nom
+        page_title: Titre
+        meta_description:
+        is_index: Définir cette page comme page d'accueil
   role:
     admin: Administrateur
     member: Membre
@@ -74,4 +75,12 @@ fr:
       update_password:
         fail_change_password: Le mot de passe n'a pas été changé
         successfully_updated: Le mot de passe a bien été modifié
-
+    pages:
+      editor:
+        module_container:
+          add_module: Ajouter Un Module
+        forms:
+          page: Page
+          personalize: Personnaliser
+      update:
+        successfully_updated: Votre page à bien été mise à jour

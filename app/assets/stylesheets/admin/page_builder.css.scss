@@ -98,3 +98,29 @@
   }
 }
 
+#columns-layout{
+  li{
+    margin-bottom: 20px;
+    cursor: pointer;
+    &:hover{
+      .pattern{
+        background-color: rgba(0,0,0,.08);
+      }
+    }
+    .pattern {
+      padding:2rem;
+      background-color: rgba(0,0,0,.05);
+      box-shadow: 0 1px 1px rgba(0,0,0,.05);
+      > div {
+        padding:0 .5rem;
+        .column{
+          background-color: $aqua;
+          height: 8rem;
+          color: #fff;
+          text-align: center;
+          padding: 3rem 0;
+        }
+      }
+    }
+  }
+}

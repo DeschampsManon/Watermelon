@@ -4,22 +4,83 @@
   .main-container{
     cursor: pointer;
     padding: 2rem 0;
+    position: relative;
+    &:hover {
+      .main-container-settings{
+        filter: alpha(opacity=100);
+        opacity: 1;
+      }
+    }
+    .main-container-settings{
+      position: absolute;
+      z-index: 1000;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: .2rem dashed $aqua;
+      -webkit-transition: opacity .2s ease-in-out;
+      -moz-transition: opacity .2s ease-in-out;
+      -ms-transition: opacity .2s ease-in-out;
+      -o-transition: opacity .2s ease-in-out;
+      transition: opacity .2s ease-in-out;
+      opacity: 0;
+      > div {
+        position: relative;
+        top: -.2rem;
+        right: -.2rem;
+        background-color: $aqua;
+        border-bottom-left-radius: .2rem;
+        > li {
+          float: left;
+          border-right: .1rem solid #fff;
+          > a {
+            display: block;
+            color: #fff;
+            padding: .5rem 1rem;
+            i {
+              font-size: 2rem;
+              display: block;
+            }
+            &.edit-main-container {
+              padding-top: .7rem;
+              i {
+                font-size: 1.8rem;
+              }
+            }
+            &.duplicate-main-container {
+              padding-top: .8rem;
+              i {
+                font-size: 1.7rem;
+                position: relative;
+                top: -.08rem;
+              }
+            }
+            &.column-main-container {
+              position: relative;
+              top: .05rem;
+            }
+          }
+        }
+      }
+    }
     .container{
       max-width: 128rem;
       width: inherit;
       .module-container{
-        padding: 0 1.5rem;
         .no-module {
           border:.2rem solid $darkpurple;
           border-radius: .4rem;
           text-align: center;
           padding: .4rem 0 .8rem 0;
           color:$darkpurple;
-          &:hover{
+          &:hover,
+          &:active,
+          &:focus {
             opacity:.7;
           }
-          p{
-            &:before{
+          p {
+            &:before {
               font-family: 'Material Icons';
               content: "add_box";
               font-size: 1.8rem;
