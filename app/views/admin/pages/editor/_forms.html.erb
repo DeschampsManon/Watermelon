@@ -1,6 +1,6 @@
 <%= form_for(@page, html: { class: 'clearfix main-form'}, remote: true) do |f| %>
   <nav>
-    <ul class="nav nav-tabs nav-justified">
+    <ul class="nav nav-tabs nav-justified" id="page-settings-links">
       <li class="active">
         <%= link_to '#page', data: {toggle: 'tab'} do %>
           <%= material_icon.description %>
@@ -15,7 +15,7 @@
       </li>
     </ul>
   </nav>
-  <div class="tab-content">
+  <div class="tab-content" id="page-settings-tabs">
     <div class="tab-pane active" id="page">
     <%= render partial: 'admin/pages/editor/form_global', locals: {f: f} %>
     </div>

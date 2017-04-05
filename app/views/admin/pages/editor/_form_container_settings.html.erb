@@ -1,0 +1,42 @@
+<div id="form-container-settings" class="hidden">
+  <h3>
+    <%= t '.block_settings' %>
+  </h3>
+  <div class="input-group">
+    <div class="input-group-addon">
+      <%= t '.bg_color' %>
+    </div>
+    <%= text_field_tag 'bg_color', "", rel: 'background-color' %>
+    <div id="background-color-preview"></div>
+  </div>
+  <div class="input-group">
+    <div class="input-group-addon">
+      <%= t '.bg_image' %>
+    </div>
+    <%= text_field_tag 'bg_image', "",rel: 'background-image' %>
+  </div>
+  <div class="input-group">
+    <div class="input-group-addon">
+      <%= t '.padding_top' %>
+    </div>
+    <%= text_field_tag 'padding_top', "", rel: 'padding-top' %>
+  </div>
+  <div class="input-group">
+    <div class="input-group-addon">
+      <%= t '.padding_right' %>
+    </div>
+    <%= text_field_tag 'padding_right', "", rel: 'padding-right' %>
+  </div>
+  <div class="input-group">
+    <div class="input-group-addon">
+      <%= t '.padding_bot' %>
+    </div>
+    <%= text_field_tag 'padding_bot', "", rel: 'padding-bottom' %>
+  </div>
+  <div class="input-group">
+    <div class="input-group-addon">
+      <%= t '.padding_left' %>
+    </div>
+    <%= text_field_tag 'padding_left', "", rel: 'padding-left' %>
+  </div>
+</div>

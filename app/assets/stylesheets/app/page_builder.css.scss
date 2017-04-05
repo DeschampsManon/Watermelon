@@ -18,7 +18,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      border: .2rem dashed $aqua;
+      border: .2rem dashed $pink_editor;
       -webkit-transition: opacity .2s ease-in-out;
       -moz-transition: opacity .2s ease-in-out;
       -ms-transition: opacity .2s ease-in-out;
@@ -29,7 +29,7 @@
         position: relative;
         top: -.2rem;
         right: -.2rem;
-        background-color: $aqua;
+        background-color: $pink_editor;
         border-bottom-left-radius: .2rem;
         > li {
           float: left;

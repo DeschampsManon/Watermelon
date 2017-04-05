@@ -84,10 +84,55 @@ function main_container_settings(e) {
         $("#columns-modal").modal('show');
     } else if (setting_clicked == "duplicate-main-container") {
         var clone = $current_main_container.clone();
+        $("#form-container-settings").addClass("hidden");
         $current_main_container.after(clone);
+        $("#form-container-settings").addClass("hidden");
     } else if (setting_clicked == "delete-main-container") {
         $current_main_container.remove();
+        $("#form-container-settings").addClass("hidden");
+    } else if ( setting_clicked == "edit-main-container") {
+        $("#page-settings-links li, #page-settings-tabs .tab-pane").removeClass("active");
+        $("#page-settings-links a[href='#design']").closest("li").addClass("active");
+        $("#page-settings-tabs #design").addClass("active");
+        $("#form-container-settings").removeClass("hidden");
+        set_css_properties();
     }
+}
+
+function set_css_properties() {
+    $element = $("#form-container-settings input");
+    $element.each(function () {
+        var property = $(this).attr("rel");
+        var container_property = $iframe.find(".current-container").css(property)
+        if (container_property != "none") {
+            if (property == "background-color") {
+                if (container_property != "rgba(0, 0, 0, 0)"){
+                    rgb2hex($iframe.find(".current-container").css("background-color"));
+                    $(this).val(new_color);
+                    $("#background-color-preview").css(property,new_color);
+                } else {
+                    $(this).val("transparent");
+                }
+            } else {
+                $(this).val(container_property);
+            }
+        }
+    })
+
+    $element.keyup(function () {
+        var property = $(this).attr("rel");
+        var value = $(this).val();
+        $iframe.find(".current-container").css(property,value);
+    });
+}
+
+var new_color;
+function rgb2hex(rgb) {
+    rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+    function hex(x) {
+        return ("0" + parseInt(x).toString(16)).slice(-2);
+    }
+    new_color = "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
 }
 
 $(document).ready(function () {

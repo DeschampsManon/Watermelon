@@ -36,6 +36,43 @@
       background-color: #3a3948;
       min-height: 100.5vh;
       .main-form{
+        .input-group {
+          border: .1rem solid #5c5967;
+          border-radius: .4rem;
+          .input-group-addon {
+            width: 11.8rem;
+            text-align: left;
+            border: 0 solid transparent;
+          }
+          input {
+            border-top-left-radius: 0!important;
+            border-bottom-left-radius: 0!important;
+            border: 0 solid transparent;
+          }
+          #background-color-preview {
+            width: 1.5rem;
+            height: 1.5rem;
+            position: absolute;
+            right: 5px;
+            top: 7.5px;
+            border: .1rem solid #ccc;
+          }
+        }
+        #form-container-settings {
+          padding: 1.5rem;
+          display: block;
+          overflow: hidden;
+          h3 {
+            background-color: $pink_editor;
+            color: #fff;
+            font-size: 1.3rem;
+            padding: .8rem;
+            text-align: center;
+            border-radius: .2rem;
+            margin-bottom: 1.5rem;
+            margin-top: .5rem;
+          }
+        }
         input[type="text"],
         textarea{
           border-color: #5c5967;
@@ -55,7 +92,6 @@
           -webkit-box-shadow: inset 1px 1px 3px #9b97a9;
         }
         input[type="submit"]{
-          margin-top: 2rem;
           width: 100%;
         }
         label{

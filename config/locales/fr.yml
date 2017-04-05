@@ -78,9 +78,17 @@ fr:
     pages:
       editor:
         module_container:
-          add_module: Ajouter Un Module
+          add_module: Ajouter un module
         forms:
           page: Page
           personalize: Personnaliser
+        form_container_settings:
+          bg_color: Couleur de fond
+          bg_image: Image de fond
+          padding_top: Marge - Haut
+          padding_right: Marge - Droite
+          padding_bot: Marge - Bas
+          padding_left: Marge - Gauche
+
       update:
         successfully_updated: Votre page à bien été mise à jour
