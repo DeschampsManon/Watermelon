@@ -1,9 +1,4 @@
 $("#modules-modal").modal("hide");
 
-var $module_parent = $iframe.find(".current-container");
-
-<% if @module == "text" %>
-  $module_parent.html("<%= j render 'admin/pages/editor/module_text' %>");
-<% else %>
-  //$columns_$parent.append("<%# j render 'admin/pages/editor/module_container', { module: @module } %>");
-<% end %>
+$("body").append("<%= j render 'admin/pages/editor/modules/module_choosen_modal', { module: @module } %>");
+$("#module-choosen").modal("show");
