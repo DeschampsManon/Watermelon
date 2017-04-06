@@ -132,7 +132,7 @@ function add_block(e){
     e.preventDefault();
     var action_clicked = $(this).attr("id");
     var page_id = $(this).closest("ul").data("id");
-    $iframe.find(".main-container").removeClass("current-container");b
+    $iframe.find(".main-container").removeClass("current-container");
     $(this).closest(".main-container").addClass("current-container");
     if(action_clicked == "add-main-container") {
         $.ajax({
@@ -151,6 +151,10 @@ function rgb2hex(rgb) {
     new_color = "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
 }
 
+function choose_module() {
+    $("#modules-modal").modal('show');
+}
+
 $(document).ready(function () {
     get_domain_name()
     $("#admin_page_page_title, #admin_page_meta_description, #admin_page_name").keyup(browser_search_result_preview);
@@ -160,5 +164,6 @@ $(document).ready(function () {
         $iframe = $(this).contents();
         $iframe.off("click", ".main-container .main-container-settings a").on("click", ".main-container .main-container-settings a", main_container_settings);
         $iframe.off("click", ".add-block a").on("click", ".add-block a", add_block);
+        $iframe.off("click", ".module-container .no-module").on("click", ".module-container .no-module", choose_module);
     })
 });

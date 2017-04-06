@@ -35,13 +35,16 @@
       }
       li {
         float: left;
-        padding: .5rem 0 .5rem 1rem;
         &:after{
           content: "|";
-          margin-left: .5rem;
+          position: relative;
+          top: .43rem;
         }
         a {
           color:$grey;
+          display: block;
+          float: left;
+          padding: .5rem .8rem .5rem 1rem;
           &:hover{
             color:#4e6275;
           }
@@ -50,7 +53,6 @@
     }
     .main-container-settings{
       position: absolute;
-      z-index: 1000;
       top:0;
       left: 0;
       width: 100%;
@@ -64,6 +66,7 @@
       opacity: 0;
       > div {
         position: relative;
+        z-index: 200;
         top: -.2rem;
         right: -.2rem;
         background-color: $amber;
