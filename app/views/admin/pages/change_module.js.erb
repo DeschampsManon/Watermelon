@@ -1,4 +1,4 @@
 $("#modules-modal").modal("hide");
 
-$("body").append("<%= j render 'admin/pages/editor/modules/module_choosen_modal', { module: @module } %>");
+$("body").append("<%= j render 'admin/pages/editor/modules/module_choosen_modal', { module_choosen: @module } %>");
 $("#module-choosen").modal("show");
