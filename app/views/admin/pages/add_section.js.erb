@@ -1,4 +1,4 @@
-var $columns_$parent = $iframe.find(".current-container");
-$columns_$parent.after("<%= j render 'admin/pages/editor/main_container' %>");
-$columns_$parent.nextAll().animate({ top: "5.8rem"});
+var $current_container = $iframe.find(".current-container");
+$current_container.after("<%= j render 'admin/pages/editor/main_container' %>");
+$current_container.nextAll().animate({ top: "5.8rem"});
 

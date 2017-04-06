@@ -66,6 +66,13 @@ class Admin::PagesController < AdminController
     end
   end
 
+  def change_module
+    @module = params[:module]
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def add_section
     respond_to do |format|
       format.js

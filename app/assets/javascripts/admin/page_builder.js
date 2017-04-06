@@ -32,6 +32,17 @@ function browser_search_result_preview() {
 
 var $iframe, $current_main_container;
 
+function get_current_container(element) {
+    $iframe.find(".main-container").removeClass("current-container");
+    var $current_container;
+    if (element.hasClass("no-module")) {
+        $current_container = element.closest("article")
+    } else {
+        $current_container = element.closest(".main-container");
+    }
+    $current_container.addClass("current-container");
+}
+
 function set_layout_config(element){
     layout = element.toString();
     layout_array = layout.split(",");
@@ -77,8 +88,7 @@ function change_colums_layout(){
 function main_container_settings(e) {
     e.preventDefault();
     var setting_clicked = $(this).attr("class");
-    $iframe.find(".main-container").removeClass("current-container");
-    $(this).closest(".main-container").addClass("current-container");
+    get_current_container($(this));
     $current_main_container = $iframe.find(".current-container");
     if(setting_clicked == "column-main-container") {
         $("#columns-modal").modal('show');
@@ -132,8 +142,7 @@ function add_block(e){
     e.preventDefault();
     var action_clicked = $(this).attr("id");
     var page_id = $(this).closest("ul").data("id");
-    $iframe.find(".main-container").removeClass("current-container");
-    $(this).closest(".main-container").addClass("current-container");
+    get_current_container($(this));
     if(action_clicked == "add-main-container") {
         $.ajax({
             url: "/admin/pages/"+page_id+"/add_section",
@@ -153,6 +162,19 @@ function rgb2hex(rgb) {
 
 function choose_module() {
     $("#modules-modal").modal('show');
+    get_current_container($(this));
+}
+
+function change_module(){
+    var change_module_url = $(this).closest("#modules-type").data("url");
+    var module_type = $(this).data("type");
+    $.ajax({
+        url: change_module_url,
+        data: {
+            module: module_type
+        },
+        dataType: "script"
+    });
 }
 
 $(document).ready(function () {
@@ -160,6 +182,7 @@ $(document).ready(function () {
     $("#admin_page_page_title, #admin_page_meta_description, #admin_page_name").keyup(browser_search_result_preview);
     display_columns_list();
     $("#columns-layout li").click(change_colums_layout);
+    $("#modules-type li").click(change_module);
     $("iframe#preview-page-builder").on('load', function () {
         $iframe = $(this).contents();
         $iframe.off("click", ".main-container .main-container-settings a").on("click", ".main-container .main-container-settings a", main_container_settings);
