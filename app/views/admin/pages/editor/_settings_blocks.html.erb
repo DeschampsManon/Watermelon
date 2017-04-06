@@ -1,0 +1,35 @@
+<div id="settings-blocks">
+  <ul class="main-container-settings">
+    <div class="pull-right">
+      <li>
+        <%= link_to "#!", class: "edit-main-container" do %>
+            <%= material_icon.settings %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "#!", class: "duplicate-main-container" do %>
+            <%= material_icon.library_add %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "#!", class: "column-main-container", data: {toggle: "modal", target: "#column-modal"}  do %>
+            <%= material_icon.view_column %>
+        <% end %>
+      </li>
+      <li class="">
+        <%= link_to "#!", class: "delete-main-container" do %>
+            <%= material_icon.delete_forever %>
+        <% end %>
+      </li>
+    </div>
+  </ul>
+  <div class="add-block">
+    <div class="container">
+      <ul data-id="<%= page.id %>">
+        <li>
+          <%= link_to t('.add_section'), "#!", id: "add-main-container" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

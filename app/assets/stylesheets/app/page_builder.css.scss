@@ -5,10 +5,47 @@
     cursor: pointer;
     padding: 2rem 0;
     position: relative;
+    background-color: #fff;
     &:hover {
       .main-container-settings{
         filter: alpha(opacity=100);
         opacity: 1;
+      }
+    }
+    .add-block {
+      background-color: rgba(0,0,0,.05);
+      position: absolute;
+      bottom: -5.5rem;
+      left: 0;
+      width: 100%;
+      padding: 1.5rem 0;
+      font-size: 1.3rem;
+      color:$grey;
+      &:before{
+        float:left;
+        font-family: "Material Icons";
+        content: "add_box";
+        font-size: 2rem;
+        margin-left:1.5rem;
+      }
+      &:hover{
+        &:before{
+          color:#4e6275;
+        }
+      }
+      li {
+        float: left;
+        padding: .5rem 0 .5rem 1rem;
+        &:after{
+          content: "|";
+          margin-left: .5rem;
+        }
+        a {
+          color:$grey;
+          &:hover{
+            color:#4e6275;
+          }
+        }
       }
     }
     .main-container-settings{
@@ -18,7 +55,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      border: .2rem dashed $pink_editor;
+      border: .2rem dashed $amber;
       -webkit-transition: opacity .2s ease-in-out;
       -moz-transition: opacity .2s ease-in-out;
       -ms-transition: opacity .2s ease-in-out;
@@ -29,7 +66,7 @@
         position: relative;
         top: -.2rem;
         right: -.2rem;
-        background-color: $pink_editor;
+        background-color: $amber;
         border-bottom-left-radius: .2rem;
         > li {
           float: left;
@@ -95,146 +132,6 @@
 }
 
 
-
-//
-//.main-container{
-//  background-color: #fff;
-//  padding:2rem 0;
-//  border: .2rem dashed transparent;
-//  cursor: pointer;
-//  position: relative;
-//  min-height: 16.5rem;
-//  &:hover{
-//    border-color:$aqua;
-//    .block-settings{
-//      filter: alpha(opacity=100);
-//      opacity: 1;
-//    }
-//  }
-//  .module-container{
-//    .add-module{
-//      border:.2rem solid $darkpurple;
-//      border-radius: .4rem;
-//      text-align: center;
-//      padding: .4rem 0 .8rem 0;
-//      color:$darkpurple;
-//      &:hover{
-//        opacity:.7;
-//      }
-//      p{
-//        &:before{
-//          font-family: 'Material Icons';
-//          content: "add_box";
-//          font-size: 1.8rem;
-//          position: relative;
-//          top: .4rem;
-//        }
-//      }
-//    }
-//  }
-//  .block-settings{
-//    position: absolute;
-//    left: -.2rem;
-//    top:-.2rem;
-//    width: 5rem;
-//    height: calc(100% + .4rem);
-//    height: -webkit-calc(100% + .4rem);
-//    height: -moz-calc(100% + .4rem);
-//    z-index: 500;
-//    background-color: $aqua;
-//    -webkit-transition: opacity .2s ease-in-out;
-//    -moz-transition: opacity .2s ease-in-out;
-//    -ms-transition: opacity .2s ease-in-out;
-//    -o-transition: opacity .2s ease-in-out;
-//    transition: opacity .2s ease-in-out;
-//    opacity: 1;
-//    > li{
-//      text-align: center;
-//      cursor: pointer;
-//      &:first-child{
-//        padding-top:1.5rem;
-//      }
-//      a {
-//        color: rgba(255,255,255,.6);
-//        padding-bottom: 1.5rem;
-//        &.delete-main-container{
-//          position: absolute;
-//          width: 100%;
-//          left: 0;
-//          bottom: 0;
-//          .material-icons {
-//            font-size: 2.4rem;
-//          }
-//        }
-//        .material-icons{
-//          font-size: 2.2rem;
-//          display: block;
-//          margin: 0 auto;
-//        }
-//      }
-//    }
-//  }
-//}
-//.page-builder-submenu{
-//  padding: 1rem 0;
-//  font-size: 1.3rem;
-//  color:$grey;
-//  &:before{
-//    float:left;
-//    font-family: "Material Icons";
-//    content: "add_box";
-//    font-size: 2rem;
-//    margin-left:1.5rem;
-//  }
-//  &:hover{
-//    &:before{
-//      color:#4e6275;
-//    }
-//  }
-//  li {
-//    float: left;
-//    padding: .5rem 0 .5rem 1rem;
-//    &:after{
-//      content: "|";
-//      margin-left: .5rem;
-//    }
-//    a {
-//      color:$grey;
-//      &:hover{
-//        color:#4e6275;
-//      }
-//    }
-//  }
-//}
-//
-//
-//#columns-layout {
-//  li {
-//    margin-bottom: 20px;
-//    cursor: pointer;
-//    &:hover {
-//      .pattern {
-//        background-color: rgba(0, 0, 0, .08);
-//      }
-//    }
-//    .pattern {
-//      padding: 2rem;
-//      background-color: $lightgrey;
-//      box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-//      > div {
-//        padding: 0 .5rem;
-//        .column {
-//          background-color: $aqua;
-//          height: 8rem;
-//          color: #fff;
-//          text-align: center;
-//          padding: 3rem 0;
-//        }
-//      }
-//    }
-//  }
-//}
-//
 
 
 

@@ -34,11 +34,14 @@
       position:fixed;
       width: 30rem;
       background-color: #3a3948;
-      min-height: 100.5vh;
+      min-height: 100vh;
       .main-form{
         .input-group {
           border: .1rem solid #5c5967;
           border-radius: .4rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
           .input-group-addon {
             width: 11.8rem;
             text-align: left;
@@ -60,10 +63,11 @@
         }
         #form-container-settings {
           padding: 1.5rem;
+          padding-bottom: 0;
           display: block;
           overflow: hidden;
           h3 {
-            background-color: $pink_editor;
+            background-color: $amber;
             color: #fff;
             font-size: 1.3rem;
             padding: .8rem;
@@ -71,6 +75,7 @@
             border-radius: .2rem;
             margin-bottom: 1.5rem;
             margin-top: .5rem;
+            opacity: .9;
           }
         }
         input[type="text"],

@@ -1,1 +1,9 @@
-<iframe id="preview-page-builder" src="/admin/pages/<%= @page.id %>/preview" width="100%" margin="0" style="border: 0;min-height:100vh;"></iframe>
+<section class="clearfix main-container">
+  <div class="container">
+    <div class="module-container">
+      <div class="row">
+        <%= render partial: 'admin/pages/editor/module_container', locals: {column_width: '12' } %>
+      </div>
+    </div>
+  </div>
+</section>

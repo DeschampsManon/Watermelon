@@ -1,10 +1,35 @@
 <%= render 'admin/pages/editor/columns_modal' %>
 <section class="clearfix" id="page-builder">
   <article>
-    <%= render '/admin/pages/editor/forms' %>
+    <%= render 'admin/pages/editor/forms' %>
   </article>
   <article>
-    <%= render '/admin/pages/editor/main_container' %>
+    <%= render 'admin/pages/editor/page_source' %>
   </article>
 </section>
 
+<script type="text/javascript" charset="utf-8">
+    function show_settings_block(element) {
+        element.prepend("<%= j render partial: 'admin/pages/editor/settings_blocks', locals: {page: @page} %>");
+        element.nextAll().stop().animate({ top: "5.8rem"});
+    }
+    function hide_settings_block() {
+        $iframe.find("#settings-blocks").remove();
+        $iframe.find(".main-container").stop().animate({ top: 0});
+    }
+
+    $(document).ready(function () {
+        $("iframe#preview-page-builder").on('load', function () {
+            $iframe = $(this).contents();
+            $iframe.on({
+                mouseenter: function() {
+                    show_settings_block($(this));
+                },
+                mouseleave: function() {
+                    hide_settings_block();
+                }
+            }, ".main-container");
+
+        })
+    })
+</script>

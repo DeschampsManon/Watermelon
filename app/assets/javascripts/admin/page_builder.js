@@ -85,7 +85,9 @@ function main_container_settings(e) {
     } else if (setting_clicked == "duplicate-main-container") {
         var clone = $current_main_container.clone();
         $("#form-container-settings").addClass("hidden");
+        clone.find("#settings-blocks").remove();
         $current_main_container.after(clone);
+        clone.animate({ top: "5.8rem"});
         $("#form-container-settings").addClass("hidden");
     } else if (setting_clicked == "delete-main-container") {
         $current_main_container.remove();
@@ -126,6 +128,20 @@ function set_css_properties() {
     });
 }
 
+function add_block(e){
+    e.preventDefault();
+    var action_clicked = $(this).attr("id");
+    var page_id = $(this).closest("ul").data("id");
+    $iframe.find(".main-container").removeClass("current-container");b
+    $(this).closest(".main-container").addClass("current-container");
+    if(action_clicked == "add-main-container") {
+        $.ajax({
+            url: "/admin/pages/"+page_id+"/add_section",
+            dataType: "script"
+        });
+    }
+}
+
 var new_color;
 function rgb2hex(rgb) {
     rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
@@ -143,5 +159,6 @@ $(document).ready(function () {
     $("iframe#preview-page-builder").on('load', function () {
         $iframe = $(this).contents();
         $iframe.off("click", ".main-container .main-container-settings a").on("click", ".main-container .main-container-settings a", main_container_settings);
+        $iframe.off("click", ".add-block a").on("click", ".add-block a", add_block);
     })
 });

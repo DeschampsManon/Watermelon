@@ -66,6 +66,12 @@ class Admin::PagesController < AdminController
     end
   end
 
+  def add_section
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
     def set_admin_page
       @page = Admin::Page.find(params[:id])

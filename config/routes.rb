@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       member do
         get 'preview'
         get 'change_columns_layout'
+        get 'add_section'
       end
     end
     resources :users do

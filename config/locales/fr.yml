@@ -1,4 +1,3 @@
-
 fr:
   gb: Anglais
   fr: Français
@@ -89,6 +88,7 @@ fr:
           padding_right: Marge - Droite
           padding_bot: Marge - Bas
           padding_left: Marge - Gauche
-
+        default_source:
+          add_section: Ajouter une section
       update:
         successfully_updated: Votre page à bien été mise à jour
