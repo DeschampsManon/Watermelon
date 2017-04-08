@@ -108,7 +108,8 @@
       max-width: 128rem;
       width: inherit;
       .module-container{
-        .no-module {
+        .no-module,
+        .empty-module{
           border:.2rem solid $darkpurple;
           border-radius: .4rem;
           text-align: center;
@@ -119,6 +120,25 @@
           &:focus {
             opacity:.7;
           }
+        }
+        .empty-module {
+          background-color: $darkpurple;
+          color:#fff;
+          p {
+            padding-top: .4rem;
+            position: relative;
+            .reset-module {
+              font-size: 1.8rem;
+              position: absolute;
+              top: .6rem;
+              right: .8rem;
+              &:hover {
+                color: #666;
+              }
+            }
+          }
+        }
+        .no-module {
           p {
             &:before {
               font-family: 'Material Icons';

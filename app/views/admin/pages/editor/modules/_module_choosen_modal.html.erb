@@ -1,4 +1,4 @@
-<div id="module-choosen" class="modal fade">
+<div id="module-choosen" class="modal fade" data-module="<%= @module %>">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -13,7 +13,7 @@
         <%= render "admin/pages/editor/modules/module_#{module_choosen}" %>
       </div>
       <div class="modal-footer">
-        <button class="btn cancel">
+        <button class="btn" data-dismiss="modal">
           <%= t '.finished' %>
         </button>
       </div>

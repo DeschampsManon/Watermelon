@@ -1,5 +1,7 @@
 function froala_params(){
-    $('.froala').froalaEditor()
+    $('.froala').froalaEditor({
+        placeholderText: I18n.translate('froala_placeholder')
+    })
 }
 
 $(document).ready(function() {

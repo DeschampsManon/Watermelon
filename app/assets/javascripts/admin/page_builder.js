@@ -174,8 +174,44 @@ function change_module(){
     });
 }
 
+var module
 function module_modal_closed_event() {
+    module = $(this).data("module");
+    switch(module) {
+        case 'text':
+            module_text($(this));
+            break;
+        case n:
+            //code block
+            break;
+    }
     $(this).remove();
+    $iframe.find(".current-container").removeClass("current-container");
+}
+
+function module_text(element) {
+    var content = element.find(".fr-view");
+    var new_text;
+    if (content.text()) {
+        new_text = content.html();
+        $iframe.find(".current-container").addClass("present-module")
+                                          .removeClass("no-module")
+                                          .html(new_text);
+    } else {
+        module_empty();
+    }
+}
+
+function module_empty() {
+    $iframe.find(".current-container .no-module").addClass("empty-module")
+                                                 .removeClass("no-module")
+                                                 .html("<p>"+I18n.translate(module)+"<i class='material-icons reset-module'>close</i></p>");
+}
+
+function reset_module() {
+    $(this).closest(".empty-module").addClass("no-module")
+                                    .removeClass("empty-module")
+                                    .html("<p>"+I18n.translate("add_module")+"</p>");
 }
 
 $(document).ready(function () {
@@ -190,5 +226,6 @@ $(document).ready(function () {
         $iframe.off("click", ".main-container .main-container-settings a").on("click", ".main-container .main-container-settings a", main_container_settings);
         $iframe.off("click", ".add-block a").on("click", ".add-block a", add_block);
         $iframe.off("click", ".module-container .no-module").on("click", ".module-container .no-module", choose_module);
+        $iframe.off("click", ".module-container .reset-module").on("click", ".module-container .reset-module", reset_module);
     })
 });
