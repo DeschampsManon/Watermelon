@@ -10,4 +10,5 @@
 //= require i18n/translations
 //= require select2
 //= require select2_locale_fr
+//= require froala_editor.min.js
 //= require_tree ../javascripts/admin

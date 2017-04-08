@@ -27,6 +27,7 @@ gem 'uglifier', '>= 1.3.0'
 
 #ICONS
 gem 'material_icons'
+gem 'font-awesome-rails'
 
 #IMAGES
 gem 'paperclip', '~> 5.0.0'
@@ -42,6 +43,9 @@ gem 'rolify'
 
 #DATABASE
 gem 'pg', '~> 0.18'
+
+#EDITOR
+gem 'wysiwyg-rails'
 
 # GLOBALISATION & I18n
 gem 'i18n-js', '3.0.0.rc2'

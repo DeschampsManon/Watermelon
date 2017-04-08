@@ -1,6 +1,7 @@
 @import "variables.css.scss";
 
 .active-loader{
+  overflow: hidden;
   .page-loader {
     background-color: #fff;
     position: absolute;

@@ -36,48 +36,6 @@
       background-color: #3a3948;
       min-height: 100vh;
       .main-form{
-        .input-group {
-          border: .1rem solid #5c5967;
-          border-radius: .4rem;
-          &:last-child {
-            margin-bottom: 0;
-          }
-          .input-group-addon {
-            width: 11.8rem;
-            text-align: left;
-            border: 0 solid transparent;
-          }
-          input {
-            border-top-left-radius: 0!important;
-            border-bottom-left-radius: 0!important;
-            border: 0 solid transparent;
-          }
-          #background-color-preview {
-            width: 1.5rem;
-            height: 1.5rem;
-            position: absolute;
-            right: 5px;
-            top: 7.5px;
-            border: .1rem solid #ccc;
-          }
-        }
-        #form-container-settings {
-          padding: 1.5rem;
-          padding-bottom: 0;
-          display: block;
-          overflow: hidden;
-          h3 {
-            background-color: $amber;
-            color: #fff;
-            font-size: 1.3rem;
-            padding: .8rem;
-            text-align: center;
-            border-radius: .2rem;
-            margin-bottom: 1.5rem;
-            margin-top: .5rem;
-            opacity: .9;
-          }
-        }
         input[type="text"],
         textarea{
           border-color: #5c5967;
@@ -193,4 +151,13 @@
       }
     }
   }
+}
+
+#background-color-preview {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  right: 25px;
+  top: 34px;
+  border: .1rem solid #ccc;
 }

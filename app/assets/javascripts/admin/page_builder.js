@@ -94,19 +94,13 @@ function main_container_settings(e) {
         $("#columns-modal").modal('show');
     } else if (setting_clicked == "duplicate-main-container") {
         var clone = $current_main_container.clone();
-        $("#form-container-settings").addClass("hidden");
         clone.find("#settings-blocks").remove();
         $current_main_container.after(clone);
         clone.animate({ top: "5.8rem"});
-        $("#form-container-settings").addClass("hidden");
     } else if (setting_clicked == "delete-main-container") {
         $current_main_container.remove();
-        $("#form-container-settings").addClass("hidden");
     } else if ( setting_clicked == "edit-main-container") {
-        $("#page-settings-links li, #page-settings-tabs .tab-pane").removeClass("active");
-        $("#page-settings-links a[href='#design']").closest("li").addClass("active");
-        $("#page-settings-tabs #design").addClass("active");
-        $("#form-container-settings").removeClass("hidden");
+        $("#form-container-settings").modal('show');
         set_css_properties();
     }
 }
@@ -135,6 +129,9 @@ function set_css_properties() {
         var property = $(this).attr("rel");
         var value = $(this).val();
         $iframe.find(".current-container").css(property,value);
+        if (property == "background-color") {
+            $("#background-color-preview").css(property,value);
+        }
     });
 }
 
@@ -177,12 +174,17 @@ function change_module(){
     });
 }
 
+function module_modal_closed_event() {
+    $(this).remove();
+}
+
 $(document).ready(function () {
     get_domain_name()
     $("#admin_page_page_title, #admin_page_meta_description, #admin_page_name").keyup(browser_search_result_preview);
     display_columns_list();
     $("#columns-layout li").click(change_colums_layout);
     $("#modules-type li").click(change_module);
+    $(document).on('hide.bs.modal','#module-choosen', module_modal_closed_event);
     $("iframe#preview-page-builder").on('load', function () {
         $iframe = $(this).contents();
         $iframe.off("click", ".main-container .main-container-settings a").on("click", ".main-container .main-container-settings a", main_container_settings);
