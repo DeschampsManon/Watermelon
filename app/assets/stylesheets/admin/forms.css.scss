@@ -1,5 +1,71 @@
 @import "variables";
 
+#error-explanation {
+  h3 {
+    color: $red;
+    font-size: 1.4rem;
+    padding-bottom: 1.2rem;
+  }
+  ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    color: #555;
+    li {
+      font-size: 1.3rem;
+      padding-bottom: .5rem;
+      &:last-child {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}
+
+.form-error-container{
+  position: relative;
+  overflow: hidden;
+  .error {
+    position: absolute;
+    z-index: 300;
+    right: calc(-100% + 42px);
+    right: -moz-calc(-100% + 42px);
+    right: -webkit-calc(-100% + 42px);
+    bottom: 1.5rem;
+    width: 100%;
+    padding: .85rem 1.2rem;
+    padding-left: 4.2rem;
+    background-color: $red;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+    -webkit-transition: all .8s ease-in-out;
+    -moz-transition: all .8s ease-in-out;
+    -o-transition: all .8s ease-in-out;
+    -ms-transition: all .8s ease-in-out;
+    &:before {
+      font-family: 'Material Icons';
+      content: "error";
+      font-size: 1.8rem;
+      float: left;
+      position: absolute;
+      top: .5rem;
+      left: 1.2rem;
+    }
+    &:hover {
+      transform: translateX(calc(-100% + 42px));
+      -webkit-transform: translateX(calc(-100% + 42px));
+      -moz-transform: translateX(calc(-100% + 42px));
+      -o-transform: translateX(calc(-100% + 42px));
+      -ms-transform: translateX(calc(-100% + 42px));
+    }
+  }
+  input,
+  .select2-container
+  {
+    border-color: $red!important;
+  }
+}
+
 #user-form{
   width: calc(100% - 17rem);
   width: -moz-calc(100% - 17rem);
