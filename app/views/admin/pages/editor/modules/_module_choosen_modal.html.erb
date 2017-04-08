@@ -12,6 +12,16 @@
       <div class="modal-body">
         <%= render "admin/pages/editor/modules/module_#{module_choosen}" %>
       </div>
+      <div class="modal-footer">
+        <button class="btn cancel">
+          <%= t '.finished' %>
+        </button>
+      </div>
     </div>
   </div>
 </div>
+
+
+<script type="text/javascript" charset="utf-8">
+    froala_params();
+</script>

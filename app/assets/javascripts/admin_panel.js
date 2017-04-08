@@ -11,4 +11,13 @@
 //= require select2
 //= require select2_locale_fr
 //= require froala_editor.min.js
+//= require plugins/font_family.min.js
+//= require plugins/paragraph_format.min.js
+//= require plugins/font_size.min.js
+//= require plugins/paragraph_style.min.js
+//= require plugins/colors.min.js
+//= require plugins/align.min.js
+//= require plugins/link.min.js
+//= require plugins/image.min.js
+//= require plugins/video.min.js
 //= require_tree ../javascripts/admin

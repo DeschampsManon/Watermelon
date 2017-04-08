@@ -1,15 +1,15 @@
 <nav>
   <ul class="nav nav-tabs">
-    <li class="active">
-      <%= link_to t('.view'),'#view', data: {toggle: 'tab'} %>
-    </li>
     <li>
       <%= link_to t('.text'), '#code', data: {toggle: 'tab'} %>
+    </li>
+    <li class="active">
+      <%= link_to t('.view'),'#view', data: {toggle: 'tab'} %>
     </li>
   </ul>
 </nav>
 <div class="tab-content main-form" id="page-settings-tabs">
-  <div class="tab-pane active" id="view">>
+  <div class="tab-pane active" id="view">
     <%= text_area_tag 'text_view',"",class: 'froala' %>
   </div>
   <div class="tab-pane" id="code">

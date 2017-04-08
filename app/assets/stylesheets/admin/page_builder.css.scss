@@ -153,6 +153,69 @@
   }
 }
 
+#module-choosen {
+  .nav-tabs {
+    border-bottom: 0 solid transparent;
+    > li {
+      float: right;
+      &.active {
+        position: relative;
+        z-index: 200;
+        a {
+          background-color: #F1F5F9;
+        }
+      }
+      > a {
+        color: #555;
+      }
+    }
+  }
+  .fr-toolbar.fr-top {
+    border-top: 0 solid transparent;
+    background-color: #F1F5F9;
+    .fr-hs {
+      display: none;
+    }
+    .fr-popup {
+      border-color: #555;
+      .fr-arrow {
+        border-bottom-color: #555;
+      }
+      .fr-input-line input[type=text]:focus,
+      .fr-popup .fr-input-line textarea:focus {
+        border-color: $aqua;
+      }
+      .fr-colors-tab {
+        &.fr-selected-tab,
+        &:hover{
+          color: #222;
+        }
+        &[data-param1='background']:after {
+          background-color: $aqua;
+        }
+      }
+      .fr-submit {
+        color: #555;
+      }
+    }
+    button {
+      &[data-cmd='subscript'],
+      &[data-cmd='superscript'],
+      &[data-cmd='insertHR'],
+      &[data-cmd='clearFormatting'],
+      &[data-cmd='selectAll']{
+        display:none;
+      }
+      &.fr-active {
+        color: $aqua;
+      }
+    }
+  }
+  .fr-wrapper {
+    min-height: 15rem;
+  }
+}
+
 #background-color-preview {
   width: 1.5rem;
   height: 1.5rem;
