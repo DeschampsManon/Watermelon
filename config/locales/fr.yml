@@ -39,6 +39,7 @@ fr:
         pages: Pages
         posts: Articles
         categories: Catégories
+        media: Médias
       second_header:
         edit_my_profile: Modifier mon profil
         change_my_password: Changer mon mot de passe

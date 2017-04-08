@@ -45,6 +45,12 @@
           <h2><%= t '.content' %></h2>
         </li>
         <li>
+          <%= link_to admin_pictures_url do %>
+              <%= material_icon.camera_alt %>
+              <p><%= t '.media' %></p>
+          <% end %>
+        </li>
+        <li>
           <%= link_to admin_pages_url do %>
               <%= material_icon.description %>
               <p><%= t '.pages' %></p>

@@ -1,6 +1,7 @@
 class Admin::PicturesController < AdminController
   def index
     @pictures = Admin::Picture.order('created_at')
+    @picture = Admin::Picture.new
   end
 
   def new
@@ -9,11 +10,12 @@ class Admin::PicturesController < AdminController
 
   def create
     @picture = Admin::Picture.new(picture_params)
-    if @picture.save
-      flash[:success] = "The photo was added!"
-      #redirect_to root_path
-    else
-      render 'new'
+    respond_to do |format|
+      if @picture.save
+        format.html { redirect_to admin_pictures_url }
+      else
+        format.html { render :index }
+      end
     end
   end
 

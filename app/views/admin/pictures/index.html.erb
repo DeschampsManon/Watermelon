@@ -1,0 +1,18 @@
+<% @pictures.each do |picture| %>
+    <%= image_tag picture.file(:small), onerror:"this.onerror=null;this.src='#{image_url('no-image.png')}';" %>
+<% end %>
+
+<%= form_for @picture do |f| %>
+
+<div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+    <%= f.label :file %>
+    <%= f.file_field :file, class: 'form-control'%>
+</div>
+
+<%= f.submit 'Upload', class: 'btn btn-primary' %>
+<% end %>
