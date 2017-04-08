@@ -26,5 +26,6 @@ Rails.application.routes.draw do
         get 'my_password'
       end
     end
+    resources :pictures
   end
 end

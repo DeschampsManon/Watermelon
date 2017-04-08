@@ -22,7 +22,7 @@ function validate_params() {
 
 $(document).ready(function () {
     validate_params();
-    $("#new_user").validate({
+    $("#user-form").validate({
         rules: {
             "user[email]": {
                 email: true
