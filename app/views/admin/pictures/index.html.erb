@@ -17,7 +17,7 @@
         <% @pictures.each do |picture| %>
             <div class="grid" >
               <div class="img-holder">
-                <%= image_tag picture.file(:small), onerror:"this.onerror=null;this.src='#{image_url('no-image.png')}';" %>
+                <%= image_tag 'http://cdn3-www.cattime.com/assets/uploads/2011/08/best-kitten-names-1.jpg', onerror:"this.onerror=null;this.src='#{image_url('no-image.png')}';" %>
               </div>
             </div>
         <% end %>
