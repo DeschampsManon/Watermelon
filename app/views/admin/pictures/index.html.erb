@@ -1,18 +1,42 @@
-<% @pictures.each do |picture| %>
-    <%= image_tag picture.file(:small), onerror:"this.onerror=null;this.src='#{image_url('no-image.png')}';" %>
-<% end %>
+<header id="page-header">
+  <div class="container">
+    <div class="pull-left">
+      <h1><%= t '.page_title' %></h1>
+      <p class="subtitle">
+        <%= t '.page_description' %>
+      </p>
+    </div>
+    <%= link_to "create new page", new_admin_page_url , class: "pull-right btn btn-primary" %>
+  </div>
+</header>
+
+<section class="clearfix">
+  <div class="container">
+    <div class="white-content clearfix">
+      <div class="gallery">
+        <% @pictures.each do |picture| %>
+            <div class="grid" >
+              <div class="img-holder">
+                <%= image_tag picture.file(:small), onerror:"this.onerror=null;this.src='#{image_url('no-image.png')}';" %>
+              </div>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
 
 <%= form_for @picture do |f| %>
 
-<div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
-</div>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
 
-<div class="form-group">
-    <%= f.label :file %>
-    <%= f.file_field :file, class: 'form-control'%>
-</div>
+    <div class="form-group">
+      <%= f.label :file %>
+      <%= f.file_field :file, class: 'form-control'%>
+    </div>
 
-<%= f.submit 'Upload', class: 'btn btn-primary' %>
+    <%= f.submit 'Upload', class: 'btn btn-primary' %>
 <% end %>

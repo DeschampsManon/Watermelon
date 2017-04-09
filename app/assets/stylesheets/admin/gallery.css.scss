@@ -1,0 +1,19 @@
+.gallery {
+  position:relative;
+  max-width: 100rem;
+  margin:0 auto;
+  //padding-bottom: 10px;
+  .grid {
+    width:20%;
+    background:#fff;
+    float:left;
+    -webkit-transition: top 1s ease, left 1s ease;
+    -moz-transition: top 1s ease, left 1s ease;
+    -o-transition: top 1s ease, left 1s ease;
+    -ms-transition: top 1s ease, left 1s ease;
+    img {
+      max-width: inherit;
+      width:100%;
+    }
+  }
+}
