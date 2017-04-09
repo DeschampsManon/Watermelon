@@ -1,14 +1,26 @@
 <header id="page-header">
   <div class="container">
-    <div class="pull-left">
-      <h1><%= t '.page_title' %></h1>
-      <p class="subtitle">
-        <%= t '.page_description' %>
-      </p>
-    </div>
-    <%= link_to "create new page", new_admin_page_url , class: "pull-right btn btn-primary" %>
+    <h1><%= t '.page_title' %></h1>
+    <p class="subtitle">
+      <%= t '.page_description' %>
+    </p>
   </div>
 </header>
+
+<% if flash[:alert] %>
+    <div class="container">
+      <p class="alert alert-danger">
+        <%= flash[:alert] %>
+      </p>
+    </div>
+<% end %>
+<% if flash[:notice] %>
+    <div class="container">
+      <p class="alert alert-success">
+        <%= flash[:notice] %>
+      </p>
+    </div>
+<% end %>
 
 <section class="clearfix">
   <div class="container">

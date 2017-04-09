@@ -47,16 +47,16 @@ class Admin::PostsController < AdminController
   end
 
   private
-  def set_admin_post
-    @post = Admin::Post.find(params[:id])
-  end
+    def set_admin_post
+      @post = Admin::Post.find(params[:id])
+    end
 
-  def post_params
-    params.require(:admin_post).permit(
-        :title,
-        :content,
-        :status,
-        category_ids: [],
-    )
-  end
+    def post_params
+      params.require(:admin_post).permit(
+          :title,
+          :content,
+          :status,
+          category_ids: [],
+      )
+    end
 end
