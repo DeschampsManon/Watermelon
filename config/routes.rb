@@ -28,5 +28,6 @@ Rails.application.routes.draw do
     end
     resources :pictures
     resources :posts
+    resources :categories
   end
 end

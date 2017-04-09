@@ -19,7 +19,7 @@ class Admin::PostsController < AdminController
     @post = Admin::Post.new(post_params)
     respond_to do |format|
       if @post.save
-        format.html { redirect_to edit_admin_post_url(@post) }
+        format.html { redirect_to edit_admin_post_url(@post), notice: t('.successfully_created') }
       else
         format.html { render :new }
       end
