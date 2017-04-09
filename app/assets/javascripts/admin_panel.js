@@ -19,6 +19,4 @@
 //= require plugins/align.min.js
 //= require plugins/link.min.js
 //= require plugins/image.min.js
-// vendor/assets/javascripts
-//= require blocksit.min.js
 //= require_tree ../javascripts/admin

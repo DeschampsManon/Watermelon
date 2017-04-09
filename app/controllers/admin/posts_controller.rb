@@ -19,7 +19,7 @@ class Admin::PostsController < AdminController
     @post = Admin::Post.new(post_params)
     respond_to do |format|
       if @post.save
-        format.html { redirect_to edit_admin_post_url(@post), notice: t('.successfully_created') }
+        format.html { redirect_to admin_posts_url, notice: t('.successfully_created') }
       else
         format.html { render :new }
       end
@@ -29,7 +29,7 @@ class Admin::PostsController < AdminController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to edit_admin_post_url(@post), notice: t('.successfully_updated') }
+        format.html { redirect_to admin_posts_url, notice: t('.successfully_updated') }
       else
         format.html { render :edit }
       end
@@ -55,7 +55,8 @@ class Admin::PostsController < AdminController
     params.require(:admin_post).permit(
         :title,
         :content,
-        :category_id,
+        :status,
+        category_ids: [],
     )
   end
 end

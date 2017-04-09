@@ -13,28 +13,25 @@
 <section class="clearfix">
   <div class="container">
     <div class="white-content clearfix">
-      <div class="gallery">
+      <div class="row gallery">
         <% @pictures.each do |picture| %>
             <div class="col-md-2" >
-              <%= image_tag picture.file(:small), onerror:"this.onerror=null;this.src='#{image_url('no-image.png')}';" %>
+              <div class="content-flex">
+                <%= image_tag picture.file(:small), onerror:"this.onerror=null;this.src='#{image_url('no-image.png')}';" %>
+              </div>
+            </div>
+        <% end %>
+        <%= form_for @picture do |f| %>
+            <div class="col-md-2" >
+              <div class="content-flex settings_wrap">
+                <%= f.label :file, class: "drop-target" do %>
+                  <%= material_icon.cloud_upload %>
+                <% end %>
+                <%= f.file_field :file, class: "hidden" %>
+              </div>
             </div>
         <% end %>
       </div>
     </div>
   </div>
 </section>
-
-<%= form_for @picture do |f| %>
-
-    <div class="form-group">
-      <%= f.label :title %>
-      <%= f.text_field :title, class: 'form-control' %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :file %>
-      <%= f.file_field :file, class: 'form-control'%>
-    </div>
-
-    <%= f.submit 'Upload', class: 'btn btn-primary' %>
-<% end %>

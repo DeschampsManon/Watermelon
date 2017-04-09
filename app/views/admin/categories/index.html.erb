@@ -46,7 +46,7 @@
                   <%= category.description %>
                 </td>
                 <td>
-                  <%= Admin::Post.where(category_id: category.id).count %>
+                  <%= Admin::Post.all.select { |a| a.category_ids == category.id }.count %>
                 </td>
                 <td>
                   <div style="width:72px!important">

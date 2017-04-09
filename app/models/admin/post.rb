@@ -4,14 +4,14 @@ class Admin::Post < ApplicationRecord
 
   validates :title, presence: true, uniqueness: true
   validates :content, presence: true
-  validates :category_id, presence: true
+  validates :category_ids, presence: true
 
   STATUS_TYPES = [
       'draft',
       'published'
   ]
   def default_values
-    self.author ||= current_user.first_name current_user.last_name
+    self.author ||= User.current_user.first_name+" "+User.current_user.last_name
   end
 
 end

@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_locale
+  before_filter :set_current_user, if: :current_user
 
   def after_sign_in_path_for(resource)
     if current_user.has_role? :admin
@@ -8,6 +9,10 @@ class ApplicationController < ActionController::Base
     else
       root_path
     end
+  end
+
+  def set_current_user
+    User.current_user = current_user
   end
 
   def set_locale

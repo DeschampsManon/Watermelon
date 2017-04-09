@@ -1,13 +1,29 @@
+@import "variables";
+
 .gallery {
-  position:relative;
-  max-width: 102rem;
-  margin:0 auto;
-  //.grid {
-  //  width:20%;
-    img {
-      max-width: inherit;
-      width:100%;
-      cursor: pointer;
+  .content-flex {
+    height: 12rem;
+    position: relative;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    background: #e6e6e6;
+    border-radius: .2rem;
+    padding: .5rem;
+    transition: all 0.2s;
+    &:hover {
+      background-color: $pink;
     }
-  //}
+    img {
+      background-color: #fff;
+    }
+  }
 }
+
+.drop-target {
+  i {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 4rem;
+    margin-top: .8rem;
+  }
+}
+

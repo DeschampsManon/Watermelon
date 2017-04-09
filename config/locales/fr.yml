@@ -14,6 +14,9 @@ fr:
   error: erreur(s)
   prohibited_record: empêche(nt) la sauvegarde du formulaire
   froala_placeholder: entrez votre texte ici
+  status:
+    draft: Brouillon
+    published: Publié
   helpers:
     submit:
       admin_category:
@@ -52,6 +55,14 @@ fr:
           attributes:
             name:
               taken: Une catégorie portant déjà le même nom existe déjà
+        admin/post:
+          attributes:
+            title:
+              taken: Un article portant déjà le même nom existe déjà
+            content:
+              blank: Veuillez rédiger un contenu pour votre article
+            category_id:
+              blank: Veuillez choisir au moins une catégorie pour votre article
   role:
     admin: Administrateur
     member: Membre
@@ -135,23 +146,29 @@ fr:
       form:
         add_thumbnail: ajouter une miniature
         form_description: Les champs munis d'un astérisque sont obligatoires
+      create:
+        successfully_created: Votre article a bien été créé
+      destroy:
+        successfully_destroyed: L'article a bien été supprimé
+      update:
+        successfully_updated: L'article a bien été mis à jour
     categories:
-          index:
-            page_title: Catégories
-            page_description: Cette page vous permet de modifiez ou de supprimer une catégorie
-            create_post: Ajouter une catégorie
-            name: Nom
-            description: Description
-            used_count: Total
-          new:
-            page_title: Ajouter une catégorie
-            page_description: Cette page vous permet d'ajouter une catégorie
-          form:
-            form_description: Les champs munis d'un astérisque sont obligatoires
-          update:
-            successfully_updated: La catégorie a bien été mise à jour
-          create:
-            successfully_created: La catégorie a bien été créée
-          destroy:
-            successfully_destroyed: La catégorie a bien été supprimée
+      index:
+        page_title: Catégories
+        page_description: Cette page vous permet de modifier ou de supprimer une catégorie
+        create_post: Ajouter une catégorie
+        name: Nom
+        description: Description
+        used_count: Total
+      new:
+        page_title: Ajouter une catégorie
+        page_description: Cette page vous permet d'ajouter une catégorie
+      form:
+        form_description: Les champs munis d'un astérisque sont obligatoires
+      update:
+        successfully_updated: La catégorie a bien été mise à jour
+      create:
+        successfully_created: La catégorie a bien été créée
+      destroy:
+        successfully_destroyed: La catégorie a bien été supprimée
 
