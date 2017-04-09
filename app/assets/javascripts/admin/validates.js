@@ -51,4 +51,17 @@ $(document).ready(function () {
             $(element).parents().removeClass("form-error-container");
         }
     });
+    $("#post-form").validate({
+        rules: {
+        },
+        messages: {
+        },
+        errorElement: "span",
+        highlight: function(element) {
+            $(element).wrap("<div class='form-error-container'></div>");
+        },
+        unhighlight: function(element) {
+            $(element).parents().removeClass("form-error-container");
+        }
+    });
 });

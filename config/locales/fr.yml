@@ -13,11 +13,15 @@ fr:
   validate_required: Veuillez renseigner ce champs
   error: erreur(s)
   prohibited_record: empêche(nt) la sauvegarde du formulaire
+  froala_placeholder: entrez votre texte ici
   helpers:
     submit:
       admin_category:
         create: créer une catégorie
         update: modifier la catégorie
+      admin_post:
+        create: créer un article
+        update: modifier l'article
   activerecord:
     attributes:
       user:
@@ -32,6 +36,11 @@ fr:
       admin/category:
         name: Nom
         description: Description
+      admin/post:
+        title: Titre
+        category_id: Catégories
+        status: Statut
+        content: Contenu
       admin/page:
         name: Nom
         page_title: Titre
@@ -125,6 +134,7 @@ fr:
         page_description: Cette page vous permet d'ajouter un article
       form:
         add_thumbnail: ajouter une miniature
+        form_description: Les champs munis d'un astérisque sont obligatoires
     categories:
           index:
             page_title: Catégories

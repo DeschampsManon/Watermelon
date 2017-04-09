@@ -15,8 +15,9 @@
 <section class="clearfix margin-bot-20">
   <div class="container">
     <div class="white-content">
-      <%= form_for(@post, html: { class: "main-form clearfix" }) do |f| %>
+      <%= form_for(@post, html: { class: "main-form clearfix", id: "post-form" }) do |f| %>
           <h2><%= t '.form_description' %></h2>
+          <%= render 'admin/shared/error_messages', target: @post %>
           <div class="pull-left center-630" style="width:17rem">
             <div class="row">
               <div class="col-md-12 margin-top-24">
@@ -32,7 +33,7 @@
               </div>
               <div class="col-md-6">
                 <%= f.label :category_id, class:"required" %>
-                <%= f.select :category_id, Admin::Category.all.map {|t| [t.name, t.id]}, {}, class: "select2", multiple: true %>
+                <%= f.select :category_id, options_for_select(Admin::Category.all.map { |x| [x.name, x.id]}, Admin::Category.all.where(id: 1).first.id ),{},class: "select2", multiple: true %>
               </div>
             </div>
             <div class="row">
@@ -44,7 +45,7 @@
             <div class="row">
               <div class="col-md-12">
                 <%= f.label :content, class:"required" %>
-                <%= f.text_area :content, class: 'froala' %>
+                <%= f.text_area :content, class: 'froala', required: true %>
               </div>
             </div>
             <div class="pull-right">
