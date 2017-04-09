@@ -9,6 +9,9 @@ fr:
   confirm_delete_title: Êtes vous sûr ?
   confirm_delete_accept: J'accepte
   confirm_delete_refuse: Retour
+  validate_required: Veuillez renseigner ce champs
+  error: erreur(s)
+  prohibited_record: empêche(nt) la sauvegarde du formulaire
   helpers:
     submit:
       admin_category:
@@ -33,6 +36,12 @@ fr:
         page_title: Titre
         meta_description:
         is_index: Définir cette page comme page d'accueil
+    errors:
+      models:
+        admin/category:
+          attributes:
+            name:
+              taken: Une catégorie portant déjà le même nom existe déjà
   role:
     admin: Administrateur
     member: Membre

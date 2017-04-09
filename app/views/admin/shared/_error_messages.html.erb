@@ -1,12 +1,14 @@
 <% if target.errors.any? %>
   <div id="error-explanation">
     <h3>
-      <%= pluralize(target.errors.count, t("error")) %>
+      <%= pluralize(target.errors.count, t('error')) %>
       <%= t 'prohibited_record'%>:
     </h3>
     <ul>
-      <% target.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+      <% target.errors.messages.values.each do |message| %>
+          <% message.each do  |msg| %>
+              <li><%= msg %></li>
+          <%end %>
       <% end %>
     </ul>
   </div>
