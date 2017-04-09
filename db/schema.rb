@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170408190852) do
+ActiveRecord::Schema.define(version: 20170409104632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admin_categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "admin_pages", force: :cascade do |t|
     t.string   "name"
@@ -33,6 +39,14 @@ ActiveRecord::Schema.define(version: 20170408190852) do
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
+  end
+
+  create_table "admin_posts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "roles", force: :cascade do |t|
