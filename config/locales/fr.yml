@@ -9,6 +9,11 @@ fr:
   confirm_delete_title: Êtes vous sûr ?
   confirm_delete_accept: J'accepte
   confirm_delete_refuse: Retour
+  helpers:
+    submit:
+      admin_category:
+        create: créer une catégorie
+        update: modifier la catégorie
   activerecord:
     attributes:
       user:
@@ -20,7 +25,10 @@ fr:
         address: Adresse
         city: Ville
         zip_code: Code Postal
-      admin_page:
+      admin/category:
+        name: Nom
+        description: Description
+      admin/page:
         name: Nom
         page_title: Titre
         meta_description:
@@ -92,7 +100,7 @@ fr:
         default_source:
           add_section: Ajouter une section
       update:
-        successfully_updated: Votre page à bien été mise à jour
+        successfully_updated: Votre page a bien été mise à jour
     posts:
       index:
         page_title: Article
@@ -111,4 +119,15 @@ fr:
             name: Nom
             description: Description
             used_count: Total
+          new:
+            page_title: Ajouter une catégorie
+            page_description: Cette page vous permet d'ajouter une catégorie
+          form:
+            form_description: Les champs munis d'un astérisque sont obligatoires
+          update:
+            successfully_updated: La catégorie a bien été mise à jour
+          create:
+            successfully_created: La catégorie a bien été créée
+          destroy:
+            successfully_destroyed: La catégorie a bien été supprimée
 

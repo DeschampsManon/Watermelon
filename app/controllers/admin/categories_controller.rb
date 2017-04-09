@@ -19,7 +19,7 @@ class Admin::CategoriesController < AdminController
     @category = Admin::Category.new(category_params)
     respond_to do |format|
       if @category.save
-        format.html { redirect_to edit_admin_category_url(@category), notice: t('.successfully_created') }
+        format.html { redirect_to admin_categories_url, notice: t('.successfully_created') }
       else
         format.html { render :new }
       end
@@ -29,7 +29,7 @@ class Admin::CategoriesController < AdminController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to edit_admin_category_url(@category), notice: t('.successfully_updated') }
+        format.html { redirect_to admin_categories_url, notice: t('.successfully_updated') }
       else
         format.html { render :edit }
       end
@@ -51,9 +51,10 @@ class Admin::CategoriesController < AdminController
     @category = Admin::Category.find(params[:id])
   end
 
-  def post_params
-    params.require(:category_params).permit(
+  def category_params
+    params.require(:admin_category).permit(
         :name,
+        :description
     )
   end
 end
