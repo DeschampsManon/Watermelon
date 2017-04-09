@@ -1,0 +1,57 @@
+<% if flash[:alert] %>
+    <div class="container">
+      <p class="alert alert-danger">
+        <%= flash[:alert] %>
+      </p>
+    </div>
+<% end %>
+<% if flash[:notice] %>
+    <div class="container">
+      <p class="alert alert-success">
+        <%= flash[:notice] %>
+      </p>
+    </div>
+<% end %>
+<section class="clearfix margin-bot-20">
+  <div class="container">
+    <div class="white-content">
+      <%= form_for(@post, html: { class: "main-form clearfix" }) do |f| %>
+          <h2><%= t '.form_description' %></h2>
+          <div class="pull-left center-630" style="width:17rem">
+            <div class="row">
+              <div class="col-md-12 margin-top-24">
+                <%= link_to t('.add_thumbnail'), "#!", class: "btn btn-danger total", style: "font-size:1.2rem" %>
+              </div>
+            </div>
+          </div>
+          <div class="pull-left padding-left-30 form-content-next-thumbnail">
+            <div class="row">
+              <div class="col-md-6">
+                <%= f.label :title, class:"required" %>
+                <%= f.text_field :title, required: true %>
+              </div>
+              <div class="col-md-6">
+                <%= f.label :category_id, class:"required" %>
+                <%= f.select :category_id, Admin::Category.all.map {|t| [t.name, t.id]}, {}, class: "select2", multiple: true %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <%= f.label :status, class:"required" %>
+                <%= f.select :status, Admin::Post::STATUS_TYPES.each_with_index.map {|x,i| [x, i+2]}, {}, class: "select2" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <%= f.label :content, class:"required" %>
+                <%= f.text_area :content, class: 'froala' %>
+              </div>
+            </div>
+            <div class="pull-right">
+              <%= f.submit class: "btn btn-primary" %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</section>

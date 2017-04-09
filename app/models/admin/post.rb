@@ -4,4 +4,9 @@ class Admin::Post < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
   validates :category_id, presence: true
+
+  STATUS_TYPES = [
+      'draft',
+      'published'
+  ]
 end

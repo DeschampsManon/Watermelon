@@ -1,0 +1,74 @@
+<header id="page-header">
+  <div class="container">
+    <div class="pull-left">
+      <h1><%= t '.page_title' %></h1>
+      <p class="subtitle">
+        <%= t '.page_description' %>
+      </p>
+    </div>
+    <%= link_to t('.create_post'), new_admin_post_url , class: "pull-right btn btn-primary" %>
+  </div>
+</header>
+
+<% if flash[:alert] %>
+    <div class="container">
+      <p class="alert alert-danger">
+        <%= flash[:alert] %>
+      </p>
+    </div>
+<% end %>
+<% if flash[:notice] %>
+    <div class="container">
+      <p class="alert alert-success">
+        <%= flash[:notice] %>
+      </p>
+    </div>
+<% end %>
+
+<section class="clearfix margin-bot-20">
+  <div class="container">
+    <div class="white-content">
+      <div class="table-responsive">
+        <table class="main-table datatable">
+          <thead>
+            <th><%= t '.title' %></th>
+            <th><%= t '.author' %></th>
+            <th><%= t '.categories' %></th>
+            <th><%= t '.status' %></th>
+            <th class="no-sorting" width="60"><%= t '.actions' %></th>
+          </thead>
+          <tbody>
+          <% @posts.each do |post| %>
+              <tr>
+                <td>
+                  <%= post.title %>
+                </td>
+                <td>
+                  z
+                </td>
+                <td>
+                  z
+                </td>
+                <td>
+                  z
+                </td>
+                <td>
+                  <div style="width:72px!important">
+                    <!-- EDIT -->
+                    <%= link_to edit_admin_post_path(post), :class => 'btn btn-primary' do %>
+                        <%= material_icon.mode_edit %>
+                    <% end %>
+                    <!-- DELETE -->
+                    <%= link_to admin_post_path(post), method: :delete, data: { confirm: t('confirm_delete') }, :class => 'btn btn-danger' do %>
+                        <%= material_icon.delete %>
+                    <% end %>
+                  </div>
+                </td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
