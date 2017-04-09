@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e79383f6-0694-4764-88f0-d34e11b54953" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/admin/validates.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/admin/validates.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/admin/category.rb" afterPath="$PROJECT_DIR$/app/models/admin/category.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/categories/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/admin/categories/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/shared/_error_messages.html.erb" afterPath="$PROJECT_DIR$/app/views/admin/shared/_error_messages.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/admin/datatable_launcher.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/admin/datatable_launcher.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/fr.yml" afterPath="$PROJECT_DIR$/config/locales/fr.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/translations.js" afterPath="$PROJECT_DIR$/public/javascripts/translations.js" />
     </list>
@@ -99,7 +96,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_error_messages.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_error_messages.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin/shared/_error_messages.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -122,11 +119,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fr.yml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fr.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/locales/fr.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="43" column="71" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="43" selection-end-column="71" />
+            <state relative-caret-position="294">
+              <caret line="119" column="22" lean-forward="true" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="datatable_launcher.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/datatable_launcher.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="66" lean-forward="false" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -177,7 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/javascripts/admin/datatable_launcher.js" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/app/page_builder.css.scss" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/admin/page_builder.js" />
         <option value="$PROJECT_DIR$/app/views/admin/pages/editor/modules/_module_choosen_modal.html.erb" />
@@ -226,8 +232,9 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/admin/validates.js" />
         <option value="$PROJECT_DIR$/app/models/admin/category.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/categories/_form.html.erb" />
-        <option value="$PROJECT_DIR$/config/locales/fr.yml" />
         <option value="$PROJECT_DIR$/app/views/admin/shared/_error_messages.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/admin/datatable_launcher.js" />
+        <option value="$PROJECT_DIR$/config/locales/fr.yml" />
       </list>
     </option>
   </component>
@@ -816,7 +823,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214884000" />
+    <option name="totallyTimeSpent" value="215082000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -891,14 +898,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20170408185832_add_attachment_file_to_pictures.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20170408190808_add_attachment_file_to_pictures.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1240,11 +1239,11 @@
         <state relative-caret-position="690">
           <caret line="46" column="21" lean-forward="true" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
           <folding>
-            <element signature="n#t '.page_title'#0;n#!!top" expanded="true" />
-            <element signature="n#t '.page_description'#0;n#!!top" expanded="true" />
-            <element signature="n#t '.name'#0;n#!!top" expanded="true" />
-            <element signature="n#t '.description'#0;n#!!top" expanded="true" />
-            <element signature="n#t '.used_count'#0;n#!!top" expanded="true" />
+            <element signature="n#t '.page_title'#0;n#!!top" expanded="false" />
+            <element signature="n#t '.page_description'#0;n#!!top" expanded="false" />
+            <element signature="n#t '.name'#0;n#!!top" expanded="false" />
+            <element signature="n#t '.description'#0;n#!!top" expanded="false" />
+            <element signature="n#t '.used_count'#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
           </folding>
         </state>
@@ -1295,14 +1294,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/fr.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="43" column="71" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="43" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/shared/_error_messages.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1311,6 +1302,22 @@
             <element signature="e#109#119#0#ruby" expanded="true" />
             <element signature="e#134#155#0#ruby" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/datatable_launcher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="66" lean-forward="false" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/fr.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="119" column="22" lean-forward="true" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>

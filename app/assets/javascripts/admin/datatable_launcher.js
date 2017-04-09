@@ -5,6 +5,7 @@ function datatable_params(){
             search:         "",
             info:           I18n.translate('datatable_info'),
             zeroRecords:    I18n.translate('datatable_zeroRecords'),
+            infoEmpty:      I18n.translate('datatable_infoEmpty'),
             paginate: {
                 previous:   '<',
                 next:       '>',
