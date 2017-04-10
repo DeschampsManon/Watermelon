@@ -1,0 +1,24 @@
+<%= form_for(@picture, html: { class: "main-form clearfix", id: "picture-form" }) do |f| %>
+  <div class="pull-left center-630" style="width:17rem">
+    <div class="content-flex">
+      <%= image_tag @picture.file(:small), onerror:"this.onerror=null;this.src='#{image_url('no-image.png')}';" %>
+    </div>
+  </div>
+  <div class="pull-left form-content-next-thumbnail">
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.label :alt %>
+        <%= f.text_field :alt %>
+      </div>
+    </div>
+    <div class="pull-right">
+      <%= f.submit nil, class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

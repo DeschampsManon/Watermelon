@@ -1,5 +1,7 @@
 class Admin::PicturesController < AdminController
   before_action :set_admin_picture, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :verify_authenticity_token, :only => [:create]
+
   def index
     @pictures = Admin::Picture.order('created_at')
   end
@@ -11,6 +13,7 @@ class Admin::PicturesController < AdminController
   end
 
   def edit
+
   end
 
   def create
@@ -50,7 +53,8 @@ class Admin::PicturesController < AdminController
     def picture_params
       params.require(:admin_picture).permit(
           :file,
-          :title
+          :title,
+          :alt
       )
     end
 end

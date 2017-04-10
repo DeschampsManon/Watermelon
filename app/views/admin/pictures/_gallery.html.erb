@@ -1,28 +1,30 @@
 <div class="row gallery">
   <% @pictures.each do |picture| %>
-      <div class="col-md-2" >
+    <div class="col-lg-2 col-sm-3 col-xs-6">
+      <div class="box-gallery">
         <div class="content-flex">
           <%= image_tag picture.file(:small), onerror:"this.onerror=null;this.src='#{image_url('no-image.png')}';" %>
-          <nav>
-            <ul>
-              <li>
-                <%= link_to edit_admin_picture_path(picture), :class => 'btn' do %>
-                    <%= material_icon.mode_edit %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to admin_picture_path(picture), method: :delete, data: { confirm: t('confirm_delete') }, :class => 'btn' do %>
-                    <%= material_icon.delete %>
-                <% end %>
-              </li>
-            </ul>
-          </nav>
         </div>
+        <nav>
+          <ul>
+            <li>
+              <%= link_to edit_admin_picture_path(picture), :class => 'btn edit-picture' do %>
+                  <%= material_icon.mode_edit %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to admin_picture_path(picture), method: :delete, data: { confirm: t('confirm_delete') }, :class => 'btn' do %>
+                  <%= material_icon.delete %>
+              <% end %>
+            </li>
+          </ul>
+        </nav>
       </div>
+    </div>
   <% end %>
   <%= form_for Admin::Picture.new, remote: true do |f| %>
-      <div class="col-md-2" >
-        <div class="content-flex">
+      <div class="col-lg-2 col-sm-3 col-xs-6">
+        <div class="box-gallery">
           <%= f.label :file, class: "drop-target" do %>
               <%= material_icon.cloud_upload %>
           <% end %>
@@ -31,3 +33,6 @@
       </div>
   <% end %>
 </div>
+
+<%= render 'edit_picture_modal' %>
+

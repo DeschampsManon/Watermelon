@@ -25,6 +25,8 @@ fr:
       admin_post:
         create: créer un article
         update: modifier l'article
+      admin_picture:
+        update: mettre à jour
   activerecord:
     attributes:
       user:
@@ -49,6 +51,9 @@ fr:
         page_title: Titre
         meta_description:
         is_index: Définir cette page comme page d'accueil
+      admin/picture:
+        title: Titre
+        alt: Texte alternatif
     errors:
       models:
         admin/category:
@@ -176,6 +181,12 @@ fr:
         page_title: Bibliothèque de médias
         page_description: Cette page vous permet de gérer les images utilisées dans votre site
         gallery_explication: Cliquez où déplacez un fichier sur la zone prévue à cet effet pour ajouter une image
+      edit_picture_modal:
+        modal_title_edit_picture: Modifiez les informations de votre image
+      update:
+        successfully_updated: L'image a bien été mise à jour
+      create:
+        successfully_created: L'image a bien été ajoutée
       destroy:
         successfully_destroyed: L'image a bien été supprimée
 

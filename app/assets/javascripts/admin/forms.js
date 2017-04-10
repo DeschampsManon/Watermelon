@@ -19,53 +19,36 @@ function remove_string_spaces() {
     $(this).val(str);
 }
 
-function makeDroppable(element, callback) {
+function makeDroppable(element) {
     element.on('dragover', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        $(this).parent().addClass('dragover');
+        element.parent().addClass('dragover');
     });
 
     element.on('dragleave', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        $(this).parent().removeClass('dragover');
+        element.parent().removeClass('dragover');
     });
 
     element.on('drop', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        $(this).parent().removeClass('dragover');
-        triggerCallback(e);
+        element.parent().removeClass('dragover');
+        var $input = element.parent().find('input');
+        var files = e.originalEvent.dataTransfer.files;
+        $input.prop('files', files);
     });
 
-    $(".drop-input").on('change', triggerCallback);
-}
-
-function triggerCallback(e) {
-    var files;
-    files = e.originalEvent.dataTransfer.files;
-    callback.call(null, files);
-}
-
-function callback(files) {
-    var formData = new FormData();
-    formData.append("files", files);
-    var url = $(".drop-target").closest("form").attr("action");
-    var type = $(".drop-target").closest("form").attr("method");
-    $.ajax({
-        url: url,
-        type: type,
-        data: {
-            admin_picture: { file: formData }
-        },
-        dataType: "script",
-        processData: false,
-        contentType: false,
-        success: function(response) {
-            alert(response);
-        }
+    $(".drop-input").on('change', function () {
+        $(this).closest("form").submit();
     });
+}
+
+function display_edit_picture_form(e) {
+    e.preventDefault();
+    $.get($(this).attr("href"));
 }
 
 $(document).ready(function(){
@@ -73,5 +56,6 @@ $(document).ready(function(){
     $("input.no-spaces").keyup(remove_string_spaces);
     $("input.no-spaces").on('paste', remove_string_spaces);
     $("input.no-spaces").on('change', remove_string_spaces);
-    makeDroppable($(".drop-target"), callback);
+    makeDroppable($(".drop-target"));
+    $(".edit-picture").click(display_edit_picture_form);
 });
