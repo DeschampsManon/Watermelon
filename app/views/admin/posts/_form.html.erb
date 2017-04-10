@@ -7,7 +7,7 @@
           <div class="pull-left center-630" style="width:17rem">
             <div class="row">
               <div class="col-md-12 margin-top-24">
-                <%= link_to t('.add_thumbnail'), "#!", class: "btn btn-danger total", style: "font-size:1.2rem" %>
+                <%= link_to t('.add_thumbnail'), "#!", class: "btn btn-danger total", style: "font-size:1.2rem", data: { toggle: "modal", target: "#gallery-modal" } %>
               </div>
             </div>
           </div>
@@ -42,3 +42,5 @@
     </div>
   </div>
 </section>
+
+<%= render 'gallery_modal' %>

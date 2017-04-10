@@ -25,39 +25,10 @@
 <section class="clearfix">
   <div class="container">
     <div class="white-content clearfix">
-      <div class="row gallery">
-        <% @pictures.each do |picture| %>
-            <div class="col-md-2" >
-              <div class="content-flex">
-                <%= image_tag picture.file(:small), onerror:"this.onerror=null;this.src='#{image_url('no-image.png')}';" %>
-                <nav>
-                  <ul>
-                    <li>
-                      <%= link_to edit_admin_picture_path(picture), :class => 'btn' do %>
-                          <%= material_icon.mode_edit %>
-                      <% end %>
-                    </li>
-                    <li>
-                      <%= link_to admin_picture_path(picture), method: :delete, data: { confirm: t('confirm_delete') }, :class => 'btn' do %>
-                          <%= material_icon.delete %>
-                      <% end %>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-        <% end %>
-        <%= form_for @picture do |f| %>
-            <div class="col-md-2" >
-              <div class="content-flex settings_wrap">
-                <%= f.label :file, class: "drop-target" do %>
-                  <%= material_icon.cloud_upload %>
-                <% end %>
-                <%= f.file_field :file, class: "hidden" %>
-              </div>
-            </div>
-        <% end %>
-      </div>
+      <h2>
+        <%= t '.gallery_explication' %>
+      </h2>
+      <%= render 'gallery' %>
     </div>
   </div>
 </section>

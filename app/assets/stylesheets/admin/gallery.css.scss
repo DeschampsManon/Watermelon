@@ -10,7 +10,8 @@
     border-radius: .2rem;
     padding: .5rem;
     transition: all 0.2s;
-    &:hover {
+    &:hover,
+    &.dragover {
       background-color: $pink;
       nav {
         zoom: 1;
@@ -60,14 +61,6 @@
         }
       }
     }
-  }
-}
-
-.drop-target {
-  i {
-    color: rgba(0, 0, 0, 0.3);
-    font-size: 4rem;
-    margin-top: .8rem;
   }
 }
 

@@ -2,7 +2,6 @@ class Admin::PicturesController < AdminController
   before_action :set_admin_picture, only: [:show, :edit, :update, :destroy]
   def index
     @pictures = Admin::Picture.order('created_at')
-    @picture = Admin::Picture.new
   end
 
   def show

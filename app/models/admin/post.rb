@@ -1,5 +1,4 @@
 class Admin::Post < ApplicationRecord
-  belongs_to :category
   before_save :default_values
 
   validates :title, presence: true, uniqueness: true
@@ -13,5 +12,7 @@ class Admin::Post < ApplicationRecord
   def default_values
     self.author ||= User.current_user.first_name+" "+User.current_user.last_name
   end
+
+  belongs_to :picture
 
 end

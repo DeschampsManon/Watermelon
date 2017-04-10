@@ -1,5 +1,6 @@
 class Admin::PostsController < AdminController
   before_action :set_admin_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_admin_picture, only: [:show, :edit, :new]
 
   def index
     @posts = Admin::Post.all
@@ -49,6 +50,10 @@ class Admin::PostsController < AdminController
   private
     def set_admin_post
       @post = Admin::Post.find(params[:id])
+    end
+
+    def set_admin_picture
+      @pictures = Admin:: Picture.all
     end
 
     def post_params
