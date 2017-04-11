@@ -171,7 +171,7 @@ fr:
       index:
         page_title: Catégories
         page_description: Cette page vous permet de modifier ou de supprimer une catégorie
-        create_post: Ajouter une catégorie
+        create_category: Ajouter une catégorie
         name: Nom
         description: Description
         used_count: Total

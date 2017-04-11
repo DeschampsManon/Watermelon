@@ -31,10 +31,10 @@
       <div class="table-responsive">
         <table class="main-table datatable">
           <thead>
-            <th><%= t '.title' %></th>
-            <th><%= t '.author' %></th>
-            <th><%= t '.categories' %></th>
-            <th><%= t '.status' %></th>
+            <th width="30%"><%= t '.title' %></th>
+            <th width="30%"><%= t '.author' %></th>
+            <th width="20%"><%= t '.categories' %></th>
+            <th width="15%"><%= t '.status' %></th>
             <th class="no-sorting" width="60"><%= t '.actions' %></th>
           </thead>
           <tbody>
@@ -47,7 +47,7 @@
                   <%= post.author %>
                 </td>
                 <td>
-                  <%= post.category_ids.join(', ') %>
+                  <%= post.category_ids %>
                 </td>
                 <td>
                   <%= post.status %>

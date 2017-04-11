@@ -31,36 +31,36 @@
       <div class="table-responsive">
         <table class="main-table datatable">
           <thead>
-          <th><%= t '.name' %></th>
-          <th><%= t '.description' %></th>
-          <th><%= t '.used_count' %></th>
+          <th width="40%"><%= t '.name' %></th>
+          <th width="45%"><%= t '.description' %></th>
+          <th width="10%"><%= t '.used_count' %></th>
           <th class="no-sorting" width="60"><%= t '.actions' %></th>
           </thead>
           <tbody>
           <% @categories.each do |category| %>
-              <tr>
-                <td>
-                  <%= category.name %>
-                </td>
-                <td>
-                  <%= category.description %>
-                </td>
-                <td>
-                  <%= Admin::Post.all.select { |a| a.category_ids == category.id }.count %>
-                </td>
-                <td>
-                  <div style="width:72px!important">
-                    <!-- EDIT -->
-                    <%= link_to edit_admin_category_url(category), :class => 'btn btn-primary' do %>
-                        <%= material_icon.mode_edit %>
-                    <% end %>
-                    <!-- DELETE -->
-                    <%= link_to admin_category_url(category), method: :delete, data: { confirm: t('confirm_delete') }, :class => 'btn btn-danger' do %>
-                        <%= material_icon.delete %>
-                    <% end if category.id != 1 %>
-                  </div>
-                </td>
-              </tr>
+            <tr>
+              <td>
+                <%= category.name %>
+              </td>
+              <td>
+                <%= category.description %>
+              </td>
+              <td>
+                <%= Admin::Post.all.select { |a| a.category_ids == category.id }.count %>
+              </td>
+              <td>
+                <div style="width:72px!important">
+                  <!-- EDIT -->
+                  <%= link_to edit_admin_category_url(category), :class => 'btn btn-primary' do %>
+                      <%= material_icon.mode_edit %>
+                  <% end %>
+                  <!-- DELETE -->
+                  <%= link_to admin_category_url(category), method: :delete, data: { confirm: t('confirm_delete') }, :class => 'btn btn-danger' do %>
+                      <%= material_icon.delete %>
+                  <% end if category.id != 1 %>
+                </div>
+              </td>
+            </tr>
           <% end %>
           </tbody>
         </table>
