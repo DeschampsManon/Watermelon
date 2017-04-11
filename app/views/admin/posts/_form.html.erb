@@ -4,14 +4,24 @@
       <%= form_for(@post, html: { class: "main-form clearfix", id: "post-form" }) do |f| %>
           <h2><%= t '.form_description' %></h2>
           <%= render 'admin/shared/error_messages', target: @post %>
+          <%= f.text_field :picture_id, class: "hidden" %>
           <div class="pull-left center-630" style="width:17rem">
             <div class="row">
-              <div class="col-md-12 margin-top-24">
-                <%= link_to t('.add_thumbnail'), "#!", class: "btn btn-danger total", style: "font-size:1.2rem", data: { toggle: "modal", target: "#gallery-modal" } %>
+              <div class="col-md-12">
+                <% if @post.picture %>
+                    <%= image_tag @post.picture.file(:small), onerror:"this.onerror=null;this.src='#{image_url('no-image.png')}';" %>
+                <% end %>
+                <%= link_to "#!", class: "btn btn-danger total margin-top-20", style: "font-size:1.2rem", data: { toggle: "modal", target: "#gallery-modal" } do %>
+                    <% if @post.picture %>
+                      <%= t('.change_thumbnail') %>
+                    <% else %>
+                      <%= t('.add_thumbnail') %>
+                    <% end %>
+                <% end %>
               </div>
             </div>
           </div>
-          <div class="pull-left padding-left-30 form-content-next-thumbnail">
+          <div class="pull-left form-content-next-thumbnail">
             <div class="row">
               <div class="col-md-6">
                 <%= f.label :title, class:"required" %>
@@ -31,7 +41,7 @@
             <div class="row">
               <div class="col-md-12">
                 <%= f.label :content, class:"required" %>
-                <%= f.text_area :content, class: 'froala', required: true %>
+                <%= f.text_area :content, class: 'froala' %>
               </div>
             </div>
             <div class="pull-right">

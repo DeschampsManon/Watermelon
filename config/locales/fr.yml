@@ -159,6 +159,7 @@ fr:
         page_description: Cette page vous permet d'ajouter un article
       form:
         add_thumbnail: ajouter une miniature
+        change_thumbnail: modifier la miniature
         form_description: Les champs munis d'un astérisque sont obligatoires
       create:
         successfully_created: Votre article a bien été créé

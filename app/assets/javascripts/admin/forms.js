@@ -51,6 +51,12 @@ function display_edit_picture_form(e) {
     $.get($(this).attr("href"));
 }
 
+function add_picture_to_post() {
+    var picture_id = $(this).find("img").data("id");
+    $("#admin_post_picture_id").val(picture_id);
+    alert($("#admin_post_picture_id").val());
+}
+
 $(document).ready(function(){
     $(".form-file input").change(change_image_src)
     $("input.no-spaces").keyup(remove_string_spaces);
@@ -58,4 +64,5 @@ $(document).ready(function(){
     $("input.no-spaces").on('change', remove_string_spaces);
     makeDroppable($(".drop-target"));
     $(".edit-picture").click(display_edit_picture_form);
+    $(".posts #gallery-modal .box-gallery").click(add_picture_to_post);
 });

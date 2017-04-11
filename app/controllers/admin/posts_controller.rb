@@ -61,6 +61,7 @@ class Admin::PostsController < AdminController
           :title,
           :content,
           :status,
+          :picture_id,
           category_ids: [],
       )
     end

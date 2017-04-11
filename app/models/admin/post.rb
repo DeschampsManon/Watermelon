@@ -2,7 +2,6 @@ class Admin::Post < ApplicationRecord
   before_save :default_values
 
   validates :title, presence: true, uniqueness: true
-  validates :content, presence: true
   validates :category_ids, presence: true
 
   STATUS_TYPES = [

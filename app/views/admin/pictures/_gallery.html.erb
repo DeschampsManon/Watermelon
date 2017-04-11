@@ -3,22 +3,24 @@
     <div class="col-lg-2 col-sm-3 col-xs-6">
       <div class="box-gallery">
         <div class="content-flex">
-          <%= image_tag picture.file(:small), onerror:"this.onerror=null;this.src='#{image_url('no-image.png')}';" %>
+          <%= image_tag picture.file(:small), onerror:"this.onerror=null;this.src='#{image_url('no-image.png')}';", data: {id: picture.id} %>
         </div>
-        <nav>
-          <ul>
-            <li>
-              <%= link_to edit_admin_picture_path(picture), :class => 'btn edit-picture' do %>
-                  <%= material_icon.mode_edit %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to admin_picture_path(picture), method: :delete, data: { confirm: t('confirm_delete') }, :class => 'btn' do %>
-                  <%= material_icon.delete %>
-              <% end %>
-            </li>
-          </ul>
-        </nav>
+        <% if controller_name == 'pictures' %>
+          <nav>
+            <ul>
+              <li>
+                <%= link_to edit_admin_picture_path(picture), :class => 'btn edit-picture' do %>
+                    <%= material_icon.mode_edit %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to admin_picture_path(picture), method: :delete, data: { confirm: t('confirm_delete') }, :class => 'btn' do %>
+                    <%= material_icon.delete %>
+                <% end %>
+              </li>
+            </ul>
+          </nav>
+        <% end %>
       </div>
     </div>
   <% end %>
@@ -34,5 +36,5 @@
   <% end %>
 </div>
 
-<%= render 'edit_picture_modal' %>
+<%= render 'admin/pictures/edit_picture_modal' %>
 
