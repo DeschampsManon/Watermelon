@@ -52,9 +52,13 @@ function display_edit_picture_form(e) {
 }
 
 function add_picture_to_post() {
+    var picture_src= $(this).find("img").attr("src");
     var picture_id = $(this).find("img").data("id");
     $("#admin_post_picture_id").val(picture_id);
-    alert($("#admin_post_picture_id").val());
+    $("#post-form .picture-preview").attr("src",picture_src);
+    $("#post-form .picture-preview").next(".btn").text(I18n.translate('admin.posts.form.change_thumbnail'));
+    $("#gallery-modal").modal("hide");
+
 }
 
 $(document).ready(function(){

@@ -9,7 +9,9 @@
             <div class="row">
               <div class="col-md-12">
                 <% if @post.picture %>
-                    <%= image_tag @post.picture.file(:small), onerror:"this.onerror=null;this.src='#{image_url('no-image.png')}';" %>
+                    <%= image_tag @post.picture.file(:small), onerror:"this.onerror=null;this.src='#{image_url('no-image.png')}';", class: "picture-preview total" %>
+                <% else %>
+                    <%= image_tag 'no-image.png', class: "picture-preview total" %>
                 <% end %>
                 <%= link_to "#!", class: "btn btn-danger total margin-top-20", style: "font-size:1.2rem", data: { toggle: "modal", target: "#gallery-modal" } do %>
                     <% if @post.picture %>
