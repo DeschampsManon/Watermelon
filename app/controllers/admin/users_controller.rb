@@ -49,13 +49,12 @@ class Admin::UsersController < AdminController
   end
 
   def update_password
-    respond_to do |format|
-      if @user.update_with_password(user_params_password)
-        sign_in @user, :bypass => true
-        format.html { redirect_to admin_url, notice: t('.successfully_updated') }
-      else
-        flash[:alert] = t('.fail_change_password')
-      end
+    if @user.update_with_password(user_params_password)
+      sign_in @user, :bypass => true
+      format.html { redirect_to admin_url, notice: t('.successfully_updated') }
+    else
+      redirect_to my_password_admin_user_url
+      flash[:alert] = t('.fail_change_password')
     end
   end
 
