@@ -1,0 +1,106 @@
+@import "../admin/variables";
+
+#admin-devise {
+  background-color: beige;
+  font-family: 'Open Sans';
+  .form-container {
+    max-width: 40rem;
+    min-height: 100vh;
+    background-color: $darkpurple;
+    padding:2.5rem 3rem;
+    input[type="checkbox"] {
+      display: none;
+    }
+    input[type="checkbox"] + label:before {
+      border: .1rem solid #dfe8f1;
+      box-shadow: inset 1px 1px 3px #f6f6f6;
+      -webkit-box-shadow: inset 1px 1px 3px #f6f6f6;
+      -moz-box-shadow: inset 1px 1px 3px #f6f6f6;
+      content: "\00a0";
+      border-radius: .4rem;
+      display: inline-block;
+      font-size: 1.25rem;
+      height: 1.5rem;
+      width: 1.5rem;
+      vertical-align: top;
+      background:#fff;
+      margin-bottom: 1.5rem;
+      margin-right: .8rem;
+      cursor: pointer;
+    }
+    input[type="checkbox"]:checked + label:before {
+      background: #fff;
+      color: $aqua;
+      content: "\2713";
+      text-align: center;
+    }
+    label[for='user_remember_me'] {
+      font-weight: 400;
+      color: rgba(255,255,255,.8);
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+    .input-container {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      label {
+        text-transform: uppercase;
+        font-weight: 400;
+        color: rgba(255,255,255,.8);
+        position: absolute;
+        left: 0;
+        bottom: .45rem;
+      }
+      input{
+        width: 100%;
+        background-color: transparent!important;
+        border: 0 transparent solid;
+        border-bottom: .2rem solid #fff;
+        border-radius: 0;
+        color: #fff!important;
+        padding: .8rem 0;
+        font-size: 1.2rem;
+        box-shadow: none;
+        &:-webkit-autofill {
+          -webkit-box-shadow: 0 0 0px 1000px $darkpurple inset;
+          -webkit-text-fill-color: #fff!important;
+        }
+      }
+    }
+    .btn {
+      width: 100%;
+      font-weight: 600;
+      margin-top: 2rem;
+      color: #fff;
+      border-radius: .25rem;
+      text-transform: uppercase;
+      padding: .7rem 0;
+      font-size: 1.3rem;
+      &.btn-signup {
+        background-color: $amber;
+        border-color: #e9a933;
+        &:hover,
+        &:active,
+        &:focus,
+        &[disabled] {
+          background-color: #e9a933!important;
+          border-color: #e9a933!important;
+        }
+      }
+    }
+    .actions {
+      input[type="submit"] {
+        background-color: $aqua;
+        border: .1rem solid #339186;
+        &:hover,
+        &:active,
+        &:focus,
+        &[disabled] {
+          background-color: #33B0A2!important;
+          border-color: #339186!important;
+        }
+      }
+    }
+  }
+}

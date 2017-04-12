@@ -1,6 +1,9 @@
 fr:
   en: Anglais
   fr: Français
+  log_in: connexion
+  sign_up: inscription
+  devise_password: Mot de passe
   datatable_info: Affichage des éléments _START_ à _END_ sur _TOTAL_
   datatable_infoEmpty: Affichage de l'élément 0 à 0 sur 0 éléments
   datatable_zeroRecords: Aucun élément à afficher
