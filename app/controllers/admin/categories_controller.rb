@@ -37,7 +37,12 @@ class Admin::CategoriesController < AdminController
   end
 
   def destroy
+    binding.pry
     respond_to do |format|
+      @posts = Admin::Post.where(category: @category)
+
+      # @posts.category = 1
+      # @posts.save!
       if @category.destroy
         format.html { redirect_to admin_categories_url, notice: t('.successfully_destroyed') }
       else

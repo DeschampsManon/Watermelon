@@ -47,7 +47,7 @@
                   <%= post.author %>
                 </td>
                 <td>
-                  <%= post.category_ids %>
+                  <%= post.categories.map { |category| category.name }.join(", ") %>
                 </td>
                 <td>
                   <%= post.status %>

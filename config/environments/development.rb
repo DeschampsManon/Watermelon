@@ -3,15 +3,14 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
 
-  ActionMailer::Base.smtp_settings = {
-      :address              => "smtp.gmail.com",
-      :port                 => 587,
-      :domain               => "asciicasts.com",
-      :user_name            => "asciicasts",
-      :password             => "secret",
-      :authentication       => "plain",
-      :enable_starttls_auto => true
-  }
+  config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                 587,
+      domain:               'localhost',
+      user_name:            'deschamps.manon.91@gmail.com',
+      password:             'GmailP@ssword',
+      authentication:       'plain',
+      enable_starttls_auto: true  }
 
   config.cache_classes = false
 

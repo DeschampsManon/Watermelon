@@ -77,6 +77,10 @@ fr:
               blank: Veuillez rédiger un contenu pour votre article
             category_id:
               blank: Veuillez choisir au moins une catégorie pour votre article
+        user:
+          attributes:
+            email:
+              taken: Cet email est déjà utilisé
   role:
     admin: Administrateur
     member: Membre

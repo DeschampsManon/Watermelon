@@ -17,6 +17,7 @@
     <div class="white-content">
       <%= form_for(@user, url: {action: @user.new_record? ? "create" : "update"}, html: { class: "main-form clearfix", id: "user-form" }) do |f| %>
           <h2><%= t '.form_description' %></h2>
+          <%= render 'admin/shared/error_messages', target: @user %>
           <div class="pull-left center-630" style="width:17rem">
             <div class="content-flex relative form-file">
               <%= image_tag @user.avatar(:small), onerror:"this.onerror=null;this.src='#{image_url('no-image.png')}';" %>
@@ -53,18 +54,18 @@
                 <%= f.text_field :phone, class: "no-spaces" %>
               </div>
               <div class="col-md-6">
-                <%= f.label :address, class:"required" %>
-                <%= f.text_field :address, required: true %>
+                <%= f.label :address %>
+                <%= f.text_field :address %>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6">
-                <%= f.label :city, class:"required" %>
-                <%= f.text_field :city, required: true %>
+                <%= f.label :city %>
+                <%= f.text_field :city %>
               </div>
               <div class="col-md-6">
-                <%= f.label :zip_code, class:"required" %>
-                <%= f.text_field :zip_code, class: "no-spaces", required: true %>
+                <%= f.label :zip_code %>
+                <%= f.text_field :zip_code, class: "no-spaces" %>
               </div>
             </div>
             <div class="pull-right">

@@ -4,7 +4,7 @@ class UserMailer < ApplicationMailer
     @password = password
     mail(
         to: @user.email,
-        from: "admin@test.com",
+        from: "deschamps.manon.91@gmail.com",
         subject: "Welcome #{@user.first_name}"
     )
   end
