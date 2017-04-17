@@ -58,7 +58,21 @@ function add_picture_to_post() {
     $("#post-form .picture-preview").attr("src",picture_src);
     $("#post-form .picture-preview").next(".btn").text(I18n.translate('admin.posts.form.change_thumbnail'));
     $("#gallery-modal").modal("hide");
+}
 
+function menu_form() {
+    $("#accordion .select-all-content").click(function (e) {
+        e.preventDefault();
+        var checkboxes = $(this).closest(".panel-body").find("input[type='checkbox']");
+        if($(this).hasClass("active")) {
+            $(this).removeClass("active");
+            checkboxes.prop('checked', false);
+        } else {
+            $(this).addClass("active");
+            checkboxes.prop('checked', true);
+        }
+
+    })
 }
 
 $(document).ready(function(){
@@ -69,4 +83,5 @@ $(document).ready(function(){
     makeDroppable($(".drop-target"));
     $(".edit-picture").click(display_edit_picture_form);
     $(".posts #gallery-modal .box-gallery").click(add_picture_to_post);
+    menu_form();
 });

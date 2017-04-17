@@ -6,14 +6,14 @@
     .panel-heading {
       color: $darkgrey;
       .panel-title {
-        font-size: 1.3rem;
+        font-size: 1.35rem;
         a {
           display: block;
           &:after {
             font-family: "Material Icons";
             content: "arrow_drop_down";
             cursor: pointer;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             float: right;
           }
         }
