@@ -39,8 +39,6 @@ gem 'puma', '~> 3.0'
 #AUTHENTICATION
 gem 'cancancan'
 gem 'devise'
-gem 'omniauth'
-gem 'omniauth-google-oauth2'
 gem 'rolify'
 
 #DATABASE

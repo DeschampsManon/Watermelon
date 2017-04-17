@@ -1,0 +1,47 @@
+@import "variables";
+
+#accordion {
+  .panel {
+    border-radius: .2rem;
+    .panel-heading {
+      color: $darkgrey;
+      .panel-title {
+        font-size: 1.3rem;
+        a {
+          display: block;
+          &:after {
+            font-family: "Material Icons";
+            content: "arrow_drop_down";
+            cursor: pointer;
+            font-size: 1.5rem;
+            float: right;
+          }
+        }
+      }
+    }
+    .panel-body {
+      li {
+        label {
+          font-size: 1.3rem;
+          font-weight: 400;
+          color: $darkpurple;
+          text-transform: capitalize;
+          line-height: 1.1;
+          margin-bottom: 0;
+        }
+      }
+      .actions {
+        .select-all-content {
+          text-decoration: underline!important;
+          float: left;
+          padding-top: .8rem;
+          color: $darkgrey;
+        }
+        .btn-danger {
+          float: right;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}

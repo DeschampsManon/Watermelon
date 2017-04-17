@@ -6,6 +6,9 @@ class Admin::Page < ApplicationRecord
   validates :meta_description, presence: true
   validates :page_title, presence: true
 
+  has_many :menus , :through => :items_relationships
+  has_many :items_relationships
+
   def set_default_source
     if source.blank?
       default_source = AdminController.new.render_to_string(partial: 'admin/pages/editor/default_source')

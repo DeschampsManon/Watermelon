@@ -1,0 +1,67 @@
+<header id="page-header">
+  <div class="container">
+    <div class="pull-left">
+      <h1><%= t '.page_title' %></h1>
+      <p class="subtitle">
+        <%= t '.page_description' %>
+      </p>
+    </div>
+    <%= link_to t('.create_menu'), new_admin_menu_url , class: "pull-right btn btn-primary" %>
+  </div>
+</header>
+
+<% if flash[:alert] %>
+    <div class="container">
+      <p class="alert alert-danger">
+        <%= flash[:alert] %>
+      </p>
+    </div>
+<% end %>
+<% if flash[:notice] %>
+    <div class="container">
+      <p class="alert alert-success">
+        <%= flash[:notice] %>
+      </p>
+    </div>
+<% end %>
+
+<section class="clearfix margin-bot-20">
+  <div class="container">
+    <div class="white-content">
+      <div class="table-responsive">
+        <table class="main-table datatable">
+          <thead>
+          <th width="85%"><%= t '.name' %></th>
+          <th width="15%"><%= t '.active' %></th>
+          <th class="no-sorting" width="60"><%= t '.actions' %></th>
+          </thead>
+          <tbody>
+          <% @menus.each do |menu| %>
+              <tr>
+                <td>
+                  <%= menu.name %>
+                </td>
+                <td>
+                  <%= check_box_tag( 'suspend_menu_'+menu.id.to_s, true, !menu.active, data: {remote: true, url: url_for( action: 'toggle_suspend_menu', id: menu.id, controller: 'menus' ), method: :put}, class: 'cmn-toggle cmn-toggle-round-flat toggle_suspend' ) %>
+                  <label for='suspend_menu_<%= menu.id.to_s %>'></label>
+                </td>
+                <td>
+                  <div style="width:72px!important">
+                    <!-- EDIT -->
+                    <%= link_to edit_admin_menu_path(menu), class: 'btn btn-primary' do %>
+                        <%= material_icon.mode_edit %>
+                    <% end %>
+                    <!-- DELETE -->
+                    <%= link_to admin_menu_path(menu), method: :delete, data: { confirm: t('confirm_delete') }, class: 'btn btn-danger' do %>
+                        <%= material_icon.delete %>
+                    <% end %>
+                  </div>
+                </td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

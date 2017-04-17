@@ -14,5 +14,7 @@ class Admin::Post < ApplicationRecord
   has_many :categories , :through => :categorizations
   has_many :categorizations
   belongs_to :picture
+  has_many :menus , :through => :items_relationships
+  has_many :items_relationships
 
 end

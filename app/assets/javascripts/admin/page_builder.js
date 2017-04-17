@@ -211,7 +211,12 @@ function module_empty() {
 function reset_module() {
     $(this).closest(".empty-module").addClass("no-module")
                                     .removeClass("empty-module")
-                                    .html("<p>"+I18n.translate("add_module")+"</p>");
+                                    .html("<p>"+I18n.translate('admin.pages.editor.module_container.add_module')+"</p>");
+}
+
+function set_page_source() {
+    var src = $iframe.find("body").html();
+    $("#admin_page_source").val(src);
 }
 
 $(document).ready(function () {
@@ -221,6 +226,7 @@ $(document).ready(function () {
     $("#columns-layout li").click(change_colums_layout);
     $("#modules-type li").click(change_module);
     $(document).on('hide.bs.modal','#module-choosen', module_modal_closed_event);
+    $("#page-builder-form").submit(set_page_source)
     $("iframe#preview-page-builder").on('load', function () {
         $iframe = $(this).contents();
         $iframe.off("click", ".main-container .main-container-settings a").on("click", ".main-container .main-container-settings a", main_container_settings);

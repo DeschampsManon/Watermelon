@@ -17,6 +17,7 @@ class Admin::PagesController < AdminController
   end
 
   def preview
+    @pictures = Admin::Picture.all
     render layout: 'application'
   end
 

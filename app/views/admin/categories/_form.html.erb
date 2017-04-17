@@ -5,9 +5,14 @@
           <h2><%= t '.form_description' %></h2>
           <%= render 'admin/shared/error_messages', target: @category %>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
               <%= f.label :name, class:"required" %>
               <%= f.text_field :name, required: true %>
+            </div>
+            <div class="col-md-6">
+              <%= f.label :parent_id %>
+              <%= f.select :parent_id, Admin::Category.all.map { |x| [x.name, x.id]},{prompt: true},class: "select2" %>
+              <%# f.text_field :parent_id %>
             </div>
           </div>
           <div class="row">

@@ -1,5 +1,6 @@
 class Admin::CategoriesController < AdminController
   before_action :set_admin_category, only: [:show, :edit, :update, :destroy]
+  after_action :nil_post_category, only: [:destroy]
 
   def index
     @categories = Admin::Category.all
@@ -37,12 +38,7 @@ class Admin::CategoriesController < AdminController
   end
 
   def destroy
-    binding.pry
     respond_to do |format|
-      @posts = Admin::Post.where(category: @category)
-
-      # @posts.category = 1
-      # @posts.save!
       if @category.destroy
         format.html { redirect_to admin_categories_url, notice: t('.successfully_destroyed') }
       else
@@ -52,14 +48,22 @@ class Admin::CategoriesController < AdminController
   end
 
   private
-  def set_admin_category
-    @category = Admin::Category.find(params[:id])
-  end
+    def set_admin_category
+      @category = Admin::Category.find(params[:id])
+    end
 
-  def category_params
-    params.require(:admin_category).permit(
-        :name,
-        :description
-    )
-  end
+    def category_params
+      params.require(:admin_category).permit(
+          :name,
+          :description,
+          :parent_id
+      )
+    end
+
+    def nil_post_category
+      # @posts = Admin::Post.where(category_ids: nil)
+      # @posts.each do |post|
+      #   post.update(params[:category_ids] => 1)
+      # end
+    end
 end

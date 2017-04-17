@@ -1,4 +1,4 @@
 $("#modules-modal").modal("hide");
-
 $("body").append("<%= j render 'admin/pages/editor/modules/module_choosen_modal', { module_choosen: @module } %>");
+$iframe.find(".current-container").addClass("<%= @module %>-module");
 $("#module-choosen").modal("show");

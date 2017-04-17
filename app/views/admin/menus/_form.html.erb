@@ -1,0 +1,24 @@
+<section class="clearfix margin-bot-20">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <%= render 'contents_list' %>
+      </div>
+      <div class="col-md-8">
+        <div class="white-content">
+          <%= form_for(@menu, html: { class: "main-form clearfix", id: "menu-form" }) do |f| %>
+              <div class="row">
+                <div class="col-md-12">
+                  <%= f.label :name, class:"required" %>
+                  <%= f.text_field :name, required: true %>
+                </div>
+              </div>
+              <div class="pull-right">
+                <%= f.submit nil, class: "btn btn-primary" %>
+              </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
