@@ -38,6 +38,8 @@ fr:
       admin_post:
         create: créer un article
         update: modifier l'article
+      admin_menu:
+        create: créer le menu
       admin_picture:
         update: mettre à jour
   activerecord:
@@ -67,6 +69,8 @@ fr:
         page_title: Titre
         meta_description:
         is_index: Définir cette page comme page d'accueil
+      admin/menu:
+        name: Nom
       admin/picture:
         title: Titre
         alt: Texte alternatif
@@ -198,6 +202,9 @@ fr:
       destroy:
         successfully_destroyed: La catégorie a bien été supprimée
     menus:
+      new:
+        page_title: Créer un menu
+        page_description: Ajoutez des éléments au menu depuis la colonne de gauche.
       contents_list:
         pages: Pages
         posts: Articles

@@ -36,6 +36,9 @@
           float: left;
           padding-top: .8rem;
           color: $darkgrey;
+          &:hover {
+            opacity: .8;
+          }
         }
         .btn-danger {
           float: right;
