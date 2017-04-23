@@ -10,13 +10,13 @@
         <ul>
           <% @pages.each do |page| %>
             <li>
-              <%= check_box_tag page.id %>
-              <%= label_tag page.id, page.name %>
+              <%= check_box_tag "page_#{page.id}" %>
+              <%= label_tag "page_#{page.id}", page.name %>
             </li>
           <% end %>
           <div class="actions">
             <%= link_to t('.select_all'), "#!", class: "select-all-content" %>
-            <%= link_to t('.add_to_menu'), "#!", class: "btn btn-danger" %>
+            <%= link_to t('.add_to_menu'), "#!", class: "btn btn-danger add-content-menu" %>
           </div>
         </ul>
       </div>
@@ -33,13 +33,13 @@
         <ul>
           <% @categories.each do |category| %>
             <li>
-              <%= check_box_tag category.id %>
-              <%= label_tag category.id, category.name %>
+              <%= check_box_tag "category_#{category.id}" %>
+              <%= label_tag "category_#{category.id}", category.name %>
             </li>
           <% end %>
           <div class="actions">
             <%= link_to t('.select_all'), "#!", class: "select-all-content" %>
-            <%= link_to t('.add_to_menu'), "#!", class: "btn btn-danger" %>
+            <%= link_to t('.add_to_menu'), "#!", class: "btn btn-danger add-content-menu" %>
           </div>
         </ul>
       </div>
@@ -56,13 +56,13 @@
         <ul>
           <% @posts.each do |post| %>
             <li>
-              <%= check_box_tag post.id %>
-              <%= label_tag post.id, post.title %>
+              <%= check_box_tag "post_#{post.id}" %>
+              <%= label_tag "post_#{post.id}", post.title %>
             </li>
           <% end %>
           <div class="actions">
             <%= link_to t('.select_all'), "#!", class: "select-all-content" %>
-            <%= link_to t('.add_to_menu'), "#!", class: "btn btn-danger" %>
+            <%= link_to t('.add_to_menu'), "#!", class: "btn btn-danger add-content-menu" %>
           </div>
         </ul>
       </div>

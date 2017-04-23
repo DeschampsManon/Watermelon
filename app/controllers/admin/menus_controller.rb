@@ -1,5 +1,6 @@
 class Admin::MenusController < AdminController
   before_action :set_admin_menu, only: [:show, :edit, :update, :destroy]
+  before_action :set_admin_menu_elements, only: [:new, :edit]
 
   def index
     @menus = Admin::Menu.all
@@ -10,9 +11,6 @@ class Admin::MenusController < AdminController
 
   def new
     @menu = Admin::Menu.new
-    @pages = Admin::Page.all
-    @posts = Admin::Post.all
-    @categories = Admin::Category.all
   end
 
   def edit
@@ -56,6 +54,12 @@ class Admin::MenusController < AdminController
   private
     def set_admin_menu
       @menu = Admin::Menu.find(params[:id])
+    end
+
+    def set_admin_menu_elements
+      @pages = Admin::Page.all
+      @posts = Admin::Post.all
+      @categories = Admin::Category.all
     end
 
     def menu_params

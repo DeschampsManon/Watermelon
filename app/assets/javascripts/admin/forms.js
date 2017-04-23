@@ -71,8 +71,33 @@ function menu_form() {
             $(this).addClass("active");
             checkboxes.prop('checked', true);
         }
+    });
 
-    })
+    var item_array = [];
+    $("#accordion .add-content-menu").click(function (e) {
+        e.preventDefault();
+        var checkboxes = $(this).closest(".panel-body").find("input[type='checkbox']");
+        checkboxes.each(function () {
+            if ($(this).is(":checked")) {
+                var $element = $(this).closest("li").find("input").attr("id");
+                var element_name = $(this).closest("li").find("label").text();
+                var element_classe = $element.split("_")[0];
+                var element_id = $element.split("_")[1];
+                if($.inArray(element_name, item_array) == -1 ){
+                    item_array.push({
+                        name : element_name,
+                        id : element_id,
+                        classe : element_classe
+                    });
+                }
+            }
+
+        })
+        $("#links-selection").empty();
+        for (var i = 0; i < checked_links.length; ++i) {
+            $("#links-selection").append(checked_links[i]+"<br>");
+        }
+    });
 }
 
 $(document).ready(function(){
