@@ -93,10 +93,10 @@ function menu_form() {
             }
 
         })
-        $("#links-selection").empty();
-        for (var i = 0; i < checked_links.length; ++i) {
-            $("#links-selection").append(checked_links[i]+"<br>");
-        }
+        // $("#links-selection").empty();
+        // for (var i = 0; i < checked_links.length; ++i) {
+        //     $("#links-selection").append(checked_links[i]+"<br>");
+        // }
     });
 }
 
