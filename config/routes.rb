@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :menus do
       member do
+        post 'append_links'
         put 'toggle_suspend_menu'
       end
     end

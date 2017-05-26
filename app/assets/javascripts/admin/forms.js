@@ -73,30 +73,45 @@ function menu_form() {
         }
     });
 
-    var item_array = [];
+    var item_array = [], $element;
     $("#accordion .add-content-menu").click(function (e) {
         e.preventDefault();
         var checkboxes = $(this).closest(".panel-body").find("input[type='checkbox']");
+        var user_id = $("#accordion").data("id");
+        var current_obj = { };
         checkboxes.each(function () {
-            if ($(this).is(":checked")) {
-                var $element = $(this).closest("li").find("input").attr("id");
+            var $element = $(this).closest("li").find("input").attr("id");
+            if($(this).is(':checked')){
                 var element_name = $(this).closest("li").find("label").text();
-                var element_classe = $element.split("_")[0];
+                var element_class = $element.split("_")[0];
                 var element_id = $element.split("_")[1];
-                if($.inArray(element_name, item_array) == -1 ){
-                    item_array.push({
-                        name : element_name,
-                        id : element_id,
-                        classe : element_classe
-                    });
+                current_obj = {
+                    "name": element_name,
+                    "id": element_id,
+                    "class": element_class
+                };
+                if(!item_array[$element]){
+                    item_array[$element] = current_obj;
+                }
+            }else{
+                if(item_array[$element]){
+                    delete item_array[$element];
                 }
             }
+        });
+        $.ajax({
+            type : "POST",
+            url: "/admin/menus/"+user_id+"/append_links",
+            dataType: 'json',
+            data : {"item_array": item_array}
 
-        })
-        // $("#links-selection").empty();
-        // for (var i = 0; i < checked_links.length; ++i) {
-        //     $("#links-selection").append(checked_links[i]+"<br>");
-        // }
+        });
+        // $.ajax({
+        //     url: "/admin/menus/"+user_id+"/append_links",
+        //     data: {
+        //         item_array: JSON.stringify(item_array)
+        //     },
+        // });
     });
 }
 

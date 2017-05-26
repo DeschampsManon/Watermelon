@@ -51,6 +51,11 @@ class Admin::MenusController < AdminController
 
   end
 
+  def append_links
+    binding.pry
+    @item_array = JSON.parse(params[:item_array])
+  end
+
   private
     def set_admin_menu
       @menu = Admin::Menu.find(params[:id])
